@@ -4,7 +4,7 @@ import Logo from '~/components/common/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 
-import { getHomePermalink, getBlogPermalink, getPermalink } from '~/utils/permalinks';
+import { getHomePermalink, getPermalink } from '~/utils/permalinks';
 
 const links = [
   {
@@ -39,10 +39,6 @@ const links = [
   {
     text: 'Resources',
     href: getPermalink('useful-resources-to-create-websites', 'post'),
-  },
-  {
-    text: 'Blog',
-    href: getBlogPermalink(),
   },
 ];
 ---
@@ -95,27 +91,14 @@ const links = [
             </li>
           ))
         }
-        <li class="md:hidden">
-          <a
-            class="font-bold hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
-            href="https://github.com/onwidget/astrowind">Github</a
-          >
-        </li>
       </ul>
       <div class="md:self-center flex items-center md:mb-0 ml-4">
         <div class="hidden items-center md:flex">
           <ToggleTheme iconClass="w-5 h-5" />
-          <a
-            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-            aria-label="RSS Feed"
-            href={getPermalink('/rss.xml')}
-          >
-            <Icon name="tabler:rss" class="w-5 h-5" />
-          </a>
-          <a
+          <!-- <a
             class="btn w-full ml-3 py-2.5 px-5 font-semibold text-gray-600 shadow-none text-sm"
             href="https://github.com/onwidget/astrowind">Download</a
-          >
+          > -->
         </div>
       </div>
     </nav>
