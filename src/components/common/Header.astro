@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon';
 import Logo from '~/components/common/Logo.astro';
-import ToggleTheme from '~/components/common/ToggleTheme.astro';
+// import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 
 import { getHomePermalink, getPermalink } from '~/utils/permalinks';
@@ -37,8 +37,8 @@ const links = [
     ],
   },
   {
-    text: 'Resources',
-    href: getPermalink('useful-resources-to-create-websites', 'post'),
+    text: 'Example',
+    href: getPermalink('/example'),
   },
 ];
 ---
@@ -49,13 +49,15 @@ const links = [
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
       </a>
+      <!-- 手機版畫面不顯示 -->
       <div class="flex items-center md:hidden">
-        <ToggleTheme />
+        <!-- <ToggleTheme /> -->
         <ToggleMenu />
       </div>
     </div>
+    <!-- nav 只要他在手機畫面就會隱藏 -->
     <nav
-      class="items-center w-full md:w-auto hidden md:flex text-gray-600 dark:text-slate-200 h-[calc(100vh-72px)] md:h-auto overflow-y-auto md:overflow-visible"
+      class="items-center w-full md:w-auto md:flex text-gray-600 dark:text-slate-200 h-[calc(100vh-72px)] md:h-auto overflow-y-auto md:overflow-visible"
       aria-label="Main navigation"
     >
       <ul class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto text-xl md:text-base">
@@ -92,15 +94,15 @@ const links = [
           ))
         }
       </ul>
-      <div class="md:self-center flex items-center md:mb-0 ml-4">
+      <!-- <div class="md:self-center flex items-center md:mb-0 ml-4">
         <div class="hidden items-center md:flex">
           <ToggleTheme iconClass="w-5 h-5" />
-          <!-- <a
+          <a
             class="btn w-full ml-3 py-2.5 px-5 font-semibold text-gray-600 shadow-none text-sm"
             href="https://github.com/onwidget/astrowind">Download</a
-          > -->
+          >
         </div>
-      </div>
+      </div> -->
     </nav>
   </div>
 </header>

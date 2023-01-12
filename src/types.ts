@@ -1,3 +1,4 @@
+// 做Meta的SEO接口
 export interface MetaSEO {
   title?: string;
   description?: string;

@@ -1,8 +1,14 @@
 ---
 import { SITE } from '~/config.mjs';
+// 這邊主要是JS全域的邏輯
 ---
 
+<!-- is:inline 原文：An inline script is a script that is not loaded from an external file, but embedded inside HTML.
+			就是他不是外部的JS檔，而是寫在裡面的。
+			如果想要在標籤內使用import進來的變數，就必須define:vars
+-->
 <script is:inline define:vars={{ defaultTheme: SITE.defaultTheme }}>
+  // 套用主題
   function applyTheme(theme) {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
@@ -10,18 +16,20 @@ import { SITE } from '~/config.mjs';
       document.documentElement.classList.remove('dark');
     }
   }
-
+  // 如果（有預設主題 && 有":only"字段）|| （localStorage沒有主題）&&（defaultTheme不是system）
   if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
     applyTheme(defaultTheme.replace(':only', ''));
   } else if (
     localStorage.theme === 'dark' ||
     (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
+    // 如果（localStorage的主題是dark）|| （localStorage中沒有主題 && 瀏覽器偏好暗色主題）
     applyTheme('dark');
   } else {
     applyTheme('light');
   }
 
+  // 建立監聽的函數
   function attachEvent(selector, event, fn) {
     const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
     if (matches && matches.length) {
@@ -31,8 +39,11 @@ import { SITE } from '~/config.mjs';
     }
   }
 
+  // 瀏覽器加載時執行的函數
   window.onload = function () {
+    // 最後滑動的Y軸位置
     let lastKnownScrollPosition = window.scrollY;
+    // 函數防抖
     let ticking = true;
 
     attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {
@@ -83,8 +94,10 @@ import { SITE } from '~/config.mjs';
       newlink.click();
     });
 
+    // 讓Header可以固定
     function appyHeaderStylesOnScroll() {
       const header = document.getElementById('header');
+      // 如果（Y軸超過60 && ）
       if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
         document.getElementById('header').classList.add('scroll');
       } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
@@ -106,14 +119,19 @@ import { SITE } from '~/config.mjs';
     });
   };
 
+  // 當頁面顯示後，執行的函數
   window.onpageshow = function () {
+    // 新增滑動順滑的class
     document.documentElement.classList.add('motion-safe:scroll-smooth');
+    // 刪除展開的Menu
     const elem = document.querySelector('[data-aw-toggle-menu]');
     if (elem) {
       elem.classList.remove('expanded');
     }
     document.body.classList.remove('overflow-hidden');
+    // h-screen是用來讓元素佔滿viewport整個高度
     document.getElementById('header')?.classList.remove('h-screen');
+    // #header nav是navbar的選單，通常顯示的時候代表在手機畫面被點開
     document.querySelector('#header nav')?.classList.add('hidden');
   };
 </script>
