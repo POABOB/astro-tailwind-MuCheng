@@ -1,0 +1,164 @@
+---
+const title = '交通方式';
+const subtitle = 'Transportation';
+
+import MRTSvg from '/assets/images/index/MRT.svg';
+import BusSvg from '/assets/images/index/bus.svg';
+import ParkSvg from '/assets/images/index/park.svg';
+import LibrarySvg from '/assets/images/index/library.svg';
+
+const transportantion = [
+  {
+    way: '捷運',
+    time: '四維國小站，步行七分鐘',
+    img: MRTSvg,
+  },
+  {
+    way: '公車',
+    time: '興安旅順路口，步行兩分鐘',
+    img: BusSvg,
+  },
+];
+
+const parking = [
+  {
+    place: 'P1 城市車旅停車場',
+    address: '台中市北屯區大連路三段25號',
+  },
+  {
+    place: 'P2 洪順停車場',
+    address: '台中市北屯區大連路三段25號',
+  },
+  {
+    place: 'P3 河北停車場遼寧站',
+    address: '台中市北屯區大連路三段25號',
+  },
+  {
+    place: 'P4 Times台旅顺路停車場',
+    address: '台中市北屯區大連路三段25號',
+  },
+  {
+    place: 'P5 GoLine停車場聯盟',
+    address: '台中市北屯區大連路三段25號',
+  },
+];
+
+const landmark = [
+  {
+    name: '台中市立圖書館北屯分館',
+    img: LibrarySvg,
+  },
+  {
+    name: '豐田公園',
+    img: ParkSvg,
+  },
+];
+---
+
+<section id="transportantion" class="pt-16 md:pt-32 md:pb-16">
+  <div class="w-10/12 mx-auto">
+    <div class="w-full flex flex-wrap items-center">
+      <div class="w-1/2 text-left">
+        <p class="text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-2">{title}</p>
+        <p class="text-default font-bold tracking-[.2em] text-[14px] md:text-[20px] xl:text-[22px]">{subtitle}</p>
+      </div>
+      <div class="w-full">
+        <div class="flex flex-col items-center bg-default-bg rounded-[50px] md:rounded-[75px] xl:flex-row md:max-w-8xl">
+          <div class="w-full md:h-auto xl:w-3/5">
+            <img
+              class="object-cover rounded-l-[50px] md:rounded-l-[75px] hidden xl:block"
+              src="/assets/images/index/map.png"
+              alt=""
+            />
+            <img
+              class="object-cover rounded-t-[50px] md:rounded-t-[75px] block xl:hidden"
+              src="/assets/images/index/map.png"
+              alt=""
+            />
+          </div>
+          <div class="flex flex-col p-4 leading-normal bg-default-bg rounded-[75px]">
+            <div class="mb-2">
+              <div
+                class="border-b border-default-0 text-default-2 text-[18px] text-left font-semibold tracking-[.1em] mr-8 mb-1"
+              >
+                木成牙醫診所
+              </div>
+              <p class="text-left text-sm hover:text-default-2 text-default font-medium tracking-[.1em]">
+                台中市北屯區大連路三段135號
+              </p>
+            </div>
+
+            <div class="mb-2">
+              <div
+                class="border-b border-default-0 text-default-2 text-[18px] text-left font-semibold tracking-[.1em] mr-8 mb-1"
+              >
+                大眾運輸
+              </div>
+              <ul>
+                {
+                  transportantion.map((item) => (
+                    <li class="mt-1">
+                      <div class="flex items-center group">
+                        <img class="w-6 h-auto" src={item.img} />
+                        <div class="ml-2 group-hover:text-default-2 text-default">
+                          <span class="text-sm group-hover:text-default-2 text-custom-blue font-medium tracking-[.1em]">
+                            {item.way}
+                          </span>
+                          <span class="text-sm font-medium tracking-[.1em]">{item.time}</span>
+                        </div>
+                      </div>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+
+            <div class="mb-2">
+              <div
+                class="border-b border-default-0 text-default-2 text-[18px] text-left font-semibold tracking-[.1em] mr-8 mb-1"
+              >
+                停車資訊
+              </div>
+              <div class="text-left">
+                {
+                  parking.map((item) => (
+                    <div class=" group hover:text-default-2 text-default">
+                      <span class="text-xs group-hover:text-default-2 text-green font-semibold tracking-[.1em]">
+                        {item.place}
+                      </span>
+                      <span class="text-xs font-semibold tracking-[.1em]">{item.address}</span>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <div
+                class="border-b border-default-0 text-default-2 text-[18px] text-left font-semibold tracking-[.1em] mr-8 mb-1"
+              >
+                周圍地標
+              </div>
+              <div class="text-left">
+                <ul>
+                  {
+                    landmark.map((item) => (
+                      <li class="mt-1">
+                        <div class="flex items-center">
+                          <img class="w-6 h-auto" src={item.img} />
+                          <div class="ml-2 hover:text-default-2 text-default">
+                            <span class="text-sm font-medium tracking-[.1em]">{item.name}</span>
+                          </div>
+                        </div>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

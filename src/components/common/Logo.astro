@@ -1,6 +1,18 @@
 ---
+import { Picture } from '@astrojs/image/components';
+
+export interface Props {
+  image?: string | any;
+}
+
+const { image = await Astro.slots.render('image') } = Astro.props;
 ---
 
-<span class="self-center ml-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
-  🚀 AstroWind</span
->
+<!-- 
+	aspectRatio="6:1" 代表圖片的比例 
+	widths 代表寬度大小，可以為多種寬度，例如：[200, 400]
+	sizes 直接給大小，可以根據其他條件約束，例如：(max-width: 600px) 100vw, (在小於600px寬度中，照片佔比100vh)
+-->
+<span class="self-center whitespace-nowrap">
+  {(<Picture class="inset-0 w-full object-top" widths={[200]} sizes="200px" aspectRatio="6:1" {...image} />)}
+</span>

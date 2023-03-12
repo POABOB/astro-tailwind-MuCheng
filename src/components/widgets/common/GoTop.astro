@@ -1,0 +1,25 @@
+---
+import GoTopSvg from '~/assets/images/common/goTop.svg';
+import GoTopHoverSvg from '~/assets/images/common/goTop-hover.svg';
+
+import FbSvg from '~/assets/images/common/fb.svg';
+import FbHoverSvg from '~/assets/images/common/fb-hover.svg';
+
+import LineSvg from '~/assets/images/common/line.svg';
+import LineHoverSvg from '~/assets/images/common/line-hover.svg';
+---
+
+<div class="fixed right-5 bottom-4 w-[40px] z-20 md:w-[50px] hidden" id="stick-item">
+  <div class="group mb-4 cursor-pointer" data-aw-toggle-go-top>
+    <img class="group-hover:hidden w-full h-auto" src={GoTopSvg} />
+    <img class="group-hover:block hidden w-full h-auto" src={GoTopHoverSvg} />
+  </div>
+  <a class="block group mb-4 cursor-pointer" href="###">
+    <img class="group-hover:hidden w-full h-auto" src={FbSvg} />
+    <img class="group-hover:block hidden w-full h-auto" src={FbHoverSvg} />
+  </a>
+  <a class="block group mb-4 cursor-pointer" href="###">
+    <img class="group-hover:hidden w-full h-auto" src={LineSvg} />
+    <img class="group-hover:block hidden w-full h-auto" src={LineHoverSvg} />
+  </a>
+</div>

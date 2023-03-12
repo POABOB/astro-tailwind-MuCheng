@@ -1,0 +1,62 @@
+---
+// const title = '關於木成';
+// const subtitle = 'About Mu Cheng';
+const list = [
+  {
+    name: '隱適美隱形牙套矯正',
+    eng: 'Invisalign',
+  },
+  {
+    name: '自鎖式矯正',
+    eng: 'Self-ligating braces',
+  },
+  {
+    name: '一般矯正',
+    eng: 'Orthodontic treatment',
+  },
+  {
+    name: '牙齒美白',
+    eng: 'Teeth whitening',
+  },
+  {
+    name: '顯微輔助根管治療',
+    eng: 'Microscopic root canal treatment',
+  },
+  {
+    name: '人工植牙',
+    eng: 'Dental implant',
+  },
+];
+---
+
+<!-- min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[800px] -->
+<section
+  id="grid"
+  class="flex items-center mx-auto w-full bg-cover bg-no-repeat bg-center"
+  style="background-image: url('/assets/images/index/bg-grid.jpg');"
+>
+  <div class="w-full h-full grid grid-cols-2 md:grid-cols-3 min-h-[700px] md:min-h-[600px] lg:min-h-[850px]">
+    {
+      list.map((item, index) => (
+        <div
+          class:list={[
+            'flex justify-center items-center hover:bg-opacity-0 bg-white group',
+            { 'bg-opacity-60': index % 2 === 0 },
+            { 'bg-opacity-30': index % 2 === 1 },
+          ]}
+        >
+          <div>
+            <p class="text-default-2 group-hover:text-white tracking-[.1em] text-2xl font-semibold mb-1">{item.name}</p>
+            <p class="text-default group-hover:text-white tracking-[.1em] text-lg font-semibold">{item.eng}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  ._col:hover + p {
+    color: white;
+  }
+</style>

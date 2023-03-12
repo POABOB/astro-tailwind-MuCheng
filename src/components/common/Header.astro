@@ -8,72 +8,124 @@ import { getHomePermalink, getPermalink } from '~/utils/permalinks';
 
 const links = [
   {
-    text: 'Pages',
+    text: '首頁',
     links: [
       {
-        text: 'Features',
-        href: '#',
+        text: '醫師介紹',
+        href: '#our-team',
       },
       {
-        text: 'Pricing',
-        href: '#',
+        text: '診所環境',
+        href: '#visiting-environment',
       },
       {
-        text: 'About us',
-        href: '#',
-      },
-      {
-        text: 'Contact',
-        href: '#',
-      },
-      {
-        text: 'Terms',
-        href: getPermalink('/terms'),
-      },
-      {
-        text: 'Privacy policy',
-        href: getPermalink('/privacy'),
+        text: '診所設備',
+        href: '#dental-eqipment',
       },
     ],
+    color: 'default',
+    href: getPermalink('/'),
   },
   {
-    text: 'Example',
-    href: getPermalink('/example'),
+    text: '微笑曲線',
+    links: [
+      {
+        text: '隱適美矯正',
+        href: '#',
+      },
+      {
+        text: '自鎖式矯正',
+        href: '#',
+      },
+      {
+        text: '一般矯正',
+        href: '#',
+      },
+    ],
+    color: 'default',
+    href: getPermalink('smile-curve'),
   },
+  {
+    text: '牙齒美白',
+    links: [
+      {
+        text: '冷光美白',
+        href: '#',
+      },
+      {
+        text: '居家美白',
+        href: '#',
+      },
+    ],
+    color: 'default',
+    href: getPermalink('/teeth-beauty'),
+  },
+  {
+    text: '顯微輔助治療',
+    links: [],
+    color: 'default',
+    href: getPermalink('/micro-cure'),
+  },
+  {
+    text: '人工植牙',
+    links: [],
+    color: 'default',
+    href: getPermalink('/artifact-teeth'),
+  },
+  {
+    text: '一般牙科',
+    links: [],
+    color: 'default',
+    href: getPermalink('/normal-teeth'),
+  },
+  {
+    text: '聯絡我們',
+    links: [],
+    color: 'green',
+    href: getPermalink('/contact-us'),
+  },
+  // {
+  //   text: 'Example',
+  //	links: [],
+  //   href: getPermalink('/example'),
+  // },
 ];
 ---
 
-<header class="sticky top-0 z-40 flex-none mx-auto w-full transition-all ease-in duration-100" id="header">
-  <div class="py-3 px-3 md:py-3.5 md:px-4 mx-auto w-full md:flex md:justify-between max-w-6xl">
+<header class="bg-white sticky top-0 z-40 flex-none mx-auto w-full transition-all ease-in duration-100" id="header">
+  <div class="py-3 px-3 lg:py-3.5 lg:px-4 mx-auto w-full lg:flex lg:justify-between max-w-8xl">
     <div class="flex justify-between">
       <a class="flex items-center" href={getHomePermalink()}>
-        <Logo />
+        <Logo image={{ src: import('~/assets/images/Logo.png'), alt: 'Logo' }} />
       </a>
       <!-- 手機版畫面不顯示 -->
-      <div class="flex items-center md:hidden">
+      <div class="flex items-center lg:hidden">
         <!-- <ToggleTheme /> -->
         <ToggleMenu />
       </div>
     </div>
     <!-- nav 只要他在手機畫面就會隱藏 -->
     <nav
-      class="items-center w-full md:w-auto md:flex text-gray-600 dark:text-slate-200 h-[calc(100vh-72px)] md:h-auto overflow-y-auto md:overflow-visible"
+      class="items-center w-full lg:w-auto lg:flex text-default dark:text-slate-200 h-[calc(100vh-72px)] lg:h-auto overflow-y-auto lg:overflow-visible"
       aria-label="Main navigation"
     >
-      <ul class="flex flex-col pt-8 md:pt-0 md:flex-row md:self-center w-full md:w-auto text-xl md:text-base">
+      <ul class="flex flex-col pt-8 lg:pt-0 lg:flex-row lg:self-center w-full lg:w-auto text-xl lg:text-base">
         {
-          links.map(({ text, href, links }) => (
+          links.map(({ text, href, links, color }) => (
             <li class={links?.length ? 'dropdown' : ''}>
               {links?.length ? (
                 <>
-                  <button class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out">
-                    {text} <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 hidden md:inline" />
-                  </button>
-                  <ul class="dropdown-menu rounded md:absolute pl-4 md:pl-0 md:hidden font-medium md:bg-white md:min-w-[200px] dark:md:bg-slate-800 drop-shadow-xl">
+                  <a
+                    href={href}
+                    class="text-lg font-semibold hover:text-green dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+                  >
+                    {text} <Icon name="tabler:chevron-down" class="w-3.5 h-3.5 ml-0.5 hidden lg:inline" />
+                  </a>
+                  <ul class="dropdown-menu  justify-center rounded lg:absolute pl-6 lg:pl-0 lg:hidden font-semibold lg:bg-white lg:min-w-[100px] dark:md:bg-slate-800 drop-shadow-xl">
                     {links.map(({ text: text2, href: href2 }) => (
                       <li>
                         <a
-                          class="first:rounded-t last:rounded-b md:hover:bg-gray-100 dark:hover:bg-gray-700 py-2 px-5 block whitespace-no-wrap"
+                          class="first:rounded-t last:rounded-b hover:text-green md:hover:bg-gray-100 dark:hover:bg-gray-700 py-5 px-2 block whitespace-no-wrap lg:text-center"
                           href={href2}
                         >
                           {text2}
@@ -84,7 +136,10 @@ const links = [
                 </>
               ) : (
                 <a
-                  class="font-medium hover:text-gray-900 dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out"
+                  class:list={[
+                    'text-lg font-semibold hover:text-green dark:hover:text-white px-4 py-3 flex items-center transition duration-150 ease-in-out',
+                    { 'text-green hover:text-green-light hover:opacity-75': color === 'green' },
+                  ]}
                   href={href}
                 >
                   {text}

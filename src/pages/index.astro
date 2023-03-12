@@ -2,6 +2,16 @@
 import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
+import Carousel from '~/components/widgets/index/Carousel.astro';
+import About from '~/components/widgets/index/About.astro';
+import Grid from '~/components/widgets/index/Grid.astro';
+import OurTeam from '~/components/widgets/index/OurTeam.astro';
+import VisitingEnvironment from '~/components/widgets/index/VisitingEnvironment.astro';
+
+import ConsultingHour from '~/components/widgets/index/ConsultingHour.astro';
+import Transportation from '~/components/widgets/index/Transportation.astro';
+import GoTop from '~/components/widgets/common/GoTop.astro';
+
 // 每頁的meta tag設定
 const meta = {
   title: SITE.title,
@@ -13,37 +23,18 @@ const meta = {
 <!-- 傳遞資料到Props中給Layout去操作 -->
 <Layout {meta}>
   <section>
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="py-12 md:py-20">
-        <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
-          {
-            (
-              <h1
-                class="text-5xl md:text-[3.50rem] font-bold leading-tighter tracking-tighter mb-4 font-heading"
-                set:html={'我是首頁'}
-              />
-            )
-          }
-          <div class="max-w-3xl mx-auto">
-            {(<p class="text-xl font-medium text-gray-500 mb-8 dark:text-slate-400" set:html={'ＨＥＬＬＯ'} />)}
-            <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
-              {
-                (
-                  <div class="flex w-full sm:w-auto">
-                    <Fragment set:html={'安安'} />
-                  </div>
-                )
-              }
-              {
-                (
-                  <div class="flex w-full sm:w-auto">
-                    <Fragment set:html={'安安'} />
-                  </div>
-                )
-              }
-            </div>
-          </div>
-        </div>
+    <div class="w-100 mx-auto max-w-[2000px]">
+      <div class="text-center pb-10 md:pb-16 w-100 mx-auto">
+        <Carousel />
+        <About />
+        <Grid />
+        <OurTeam />
+        <VisitingEnvironment />
+
+        <ConsultingHour />
+        <Transportation />
+
+        <GoTop />
       </div>
     </div>
   </section>

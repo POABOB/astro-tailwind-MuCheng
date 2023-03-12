@@ -2,7 +2,7 @@ import defaultImage from './assets/images/default.png';
 
 const CONFIG = {
 	// 網站名稱
-  name: 'AstroWind',
+  name: '木成牙醫診所 Mu Cheng Dental Clinic',
 	// 網域
   origin: 'https://astrowind.vercel.app',
 	// 基本路徑
@@ -11,11 +11,11 @@ const CONFIG = {
   trailingSlash: false,
 
 	// 網站SEO標題
-  title: 'AstroWind — Free template for create a website with Astro + Tailwind CSS',
+  title: '木成牙醫診所 Mu Cheng Dental Clinic',
 
 	// 網站SEO描述
   description:
-    '🚀 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.',
+    '木成牙醫診所 Mu Cheng Dental Clinic',
   
 	// 網站SEO照片
 	defaultImage: defaultImage,

@@ -1,104 +1,130 @@
 ---
-import { Icon } from 'astro-icon';
-import { getHomePermalink, getPermalink } from '~/utils/permalinks';
+// import { Icon } from 'astro-icon';
+// import { getHomePermalink, getPermalink } from '~/utils/permalinks';
 
-const links = [
-  {
-    title: 'Product',
-    items: [
-      { title: 'Features', href: '#' },
-      { title: 'Security', href: '#' },
-      { title: 'Team', href: '#' },
-      { title: 'Enterprise', href: '#' },
-      { title: 'Customer stories', href: '#' },
-      { title: 'Pricing', href: '#' },
-      { title: 'Resources', href: '#' },
-    ],
-  },
-  {
-    title: 'Platform',
-    items: [
-      { title: 'Developer API', href: '#' },
-      { title: 'Partners', href: '#' },
-      { title: 'Atom', href: '#' },
-      { title: 'Electron', href: '#' },
-      { title: 'AstroWind Desktop', href: '#' },
-    ],
-  },
-  {
-    title: 'Support',
-    items: [
-      { title: 'Docs', href: '#' },
-      { title: 'Community Forum', href: '#' },
-      { title: 'Professional Services', href: '#' },
-      { title: 'Skills', href: '#' },
-      { title: 'Status', href: '#' },
-    ],
-  },
-  {
-    title: 'Company',
-    items: [
-      { title: 'About', href: '#' },
-      { title: 'Blog', href: '#' },
-      { title: 'Careers', href: '#' },
-      { title: 'Press', href: '#' },
-      { title: 'Inclusion', href: '#' },
-      { title: 'Social Impact', href: '#' },
-      { title: 'Shop', href: '#' },
-    ],
-  },
-];
+const treatmentItems = {
+  title: '診療項目 Treatment Items',
+  items: [
+    { title: '隱適美隱形牙套矯正', href: '#' },
+    { title: '牙齒美白', href: '#' },
+    { title: '自鎖式矯正', href: '#' },
+    { title: '顯微輔助根管治療', href: '#' },
+    { title: '一般矯正', href: '#' },
+    { title: '人工植牙', href: '#' },
+  ],
+};
+const information = {
+  title: '診所資訊 Information',
+  items: [{ title: '04-12345678' }, { title: '台中市北屯區大連路三段135號' }],
+};
 
-const social = [
-  { label: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
-  { label: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-  { label: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-  { label: 'RSS', icon: 'tabler:rss', href: getPermalink('/rss.xml') },
-  { label: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
-];
+const openingHours = {
+  title: '營業時間 Opening Hours',
+  items: [
+    { title: '周一至周六', times: ['09:00 - 12:00', '13:00 - 17:00', '18:00 - 21:00'] },
+    { title: '假日休診', times: [] },
+  ],
+};
+
+// const social = [
+//   { label: 'Twitter', icon: 'tabler:brand-twitter', href: '#' },
+//   { label: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+//   { label: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+//   { label: 'RSS', icon: 'tabler:rss', href: getPermalink('/rss.xml') },
+//   { label: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+// ];
 ---
 
-<footer class="border-t border-gray-200 dark:border-slate-800">
+<footer class="border-t border-gray-200 dark:border-slate-800 bg-green-bg">
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
-      <div class="col-span-12 lg:col-span-4">
+      <!-- <div class="col-span-12 lg:col-span-4">
         <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>AstroWind</a>
+          <a class="inline-block font-bold text-xl text-white" href={getHomePermalink()}>AstroWind</a>
         </div>
-        <div class="text-sm text-gray-600">
-          <!-- <a
-            class="text-gray-600 hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
+        <div class="text-sm text-white">
+          <a
+            class="text-white hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
             href={getPermalink('/terms')}>Terms</a
           > ·
           <a
-            class="text-gray-600 hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
+            class="text-white hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
             href={getPermalink('/privacy')}>Privacy Policy</a
-          > -->
+          >
         </div>
-      </div>
+      </div> -->
       {
-        links.map(({ title, items }) => (
-          <div class="col-span-6 md:col-span-3 lg:col-span-2">
-            <div class="text-gray-800 dark:text-gray-300 font-medium mb-2">{title}</div>
-            {items && Array.isArray(items) && items.length > 0 && (
-              <ul class="text-sm">
-                {items.map(({ title, href }) => (
-                  <li class="mb-2">
+        (
+          <div class="col-span-12 md:col-span-6 lg:col-span-5">
+            <div class="text-white text-lg tracking-widest dark:text-gray-300 font-bold mb-3">
+              {treatmentItems.title}
+            </div>
+            {treatmentItems.items && Array.isArray(treatmentItems.items) && treatmentItems.items.length > 0 && (
+              <div class="w-full flex flex-wrap text-lg font-semibold">
+                {treatmentItems.items.map(({ title, href }) => (
+                  <div class="w-1/2 mb-3">
                     <a
-                      class="text-gray-600 hover:text-gray-700 hover:underline dark:text-gray-400 transition duration-150 ease-in-out"
+                      class="text-default-3 hover:text-white hover:underdivne dark:text-gray-400 transition duration-150 ease-in-out"
                       href={href}
                     >
                       {title}
                     </a>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )
+      }
+
+      {
+        (
+          <div class="col-span-12 md:col-span-4 lg:col-span-4">
+            <div class="text-white text-lg tracking-widest dark:text-gray-300 font-bold mb-2">{information.title}</div>
+            {information.items && Array.isArray(information.items) && information.items.length > 0 && (
+              <ul class="text-lg font-semibold">
+                {information.items.map(({ title }) => (
+                  <li class="mb-2">
+                    <p class="text-default-3 hover:text-white dark:text-gray-400 transition duration-150 ease-in-out">
+                      {title}
+                    </p>
                   </li>
                 ))}
               </ul>
             )}
           </div>
-        ))
+        )
+      }
+
+      {
+        (
+          <div class="col-span-12 md:col-span-3 lg:col-span-3">
+            <div class="text-white text-lg tracking-widest dark:text-gray-300 font-bold mb-2">{openingHours.title}</div>
+            {openingHours.items && Array.isArray(openingHours.items) && openingHours.items.length > 0 && (
+              <div class="w-full flex flex-wrap text-lg font-semibold">
+                {openingHours.items.map(({ title, times }) => (
+                  <div class="w-1/2 mb-3">
+                    <p class="text-default-3 hover:text-white dark:text-gray-400 transition duration-150 ease-in-out">
+                      {title}
+                    </p>
+                  </div>
+									<div class="w-1/2 mb-3 text-left">
+										{
+											times.map(i => (
+												<p class="text-default-3 hover:text-white dark:text-gray-400 transition duration-150 ease-in-out">
+													{i}
+												</p>
+											))
+										}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )
       }
     </div>
-    <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
+    <!-- <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
       <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0">
         {
           social.map(({ label, href, icon }) => (
@@ -123,6 +149,6 @@ const social = [
         Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="https://onwidget.com/"> onWidget</a> ·
         All rights reserved.
       </div>
-    </div>
+    </div> -->
   </div>
 </footer>

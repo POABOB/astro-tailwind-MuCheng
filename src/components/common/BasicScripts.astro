@@ -16,6 +16,15 @@ import { SITE } from '~/config.mjs';
       document.documentElement.classList.remove('dark');
     }
   }
+
+  function smoothScroll() {
+    var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    if (currentScroll > 0) {
+      window.requestAnimationFrame(smoothScroll);
+      window.scrollTo(0, currentScroll - currentScroll / 5);
+    }
+  }
+
   // 如果（有預設主題 && 有":only"字段）|| （localStorage沒有主題）&&（defaultTheme不是system）
   if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
     applyTheme(defaultTheme.replace(':only', ''));
@@ -51,6 +60,11 @@ import { SITE } from '~/config.mjs';
       document.body.classList.toggle('overflow-hidden');
       document.getElementById('header')?.classList.toggle('h-screen');
       document.querySelector('#header nav')?.classList.toggle('hidden');
+    });
+
+    // 點擊goTop
+    attachEvent('[data-aw-toggle-go-top]', 'click', function () {
+      smoothScroll();
     });
 
     attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
@@ -100,8 +114,10 @@ import { SITE } from '~/config.mjs';
       // 如果（Y軸超過60 && ）
       if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
         document.getElementById('header').classList.add('scroll');
+        document.getElementById('stick-item').classList.remove('hidden');
       } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
         document.getElementById('header').classList.remove('scroll');
+        document.getElementById('stick-item').classList.add('hidden');
       }
       ticking = false;
     }
