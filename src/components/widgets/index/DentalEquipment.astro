@@ -110,7 +110,7 @@ const list = [
   #s2:checked ~ ._cards #slide0,
   #s3:checked ~ ._cards #slide1,
   #s4:checked ~ ._cards #slide2 {
-    transform: translate3d(-300%, 0, -220px);
+    /* transform: translate3d(-300%, 0, -220px); */
     display: none;
   }
 
@@ -167,17 +167,17 @@ const list = [
   #s2:checked ~ ._cards #slide4,
   #s3:checked ~ ._cards #slide0,
   #s4:checked ~ ._cards #slide1 {
-    transform: translate3d(300%, 0, -220px);
+    /* transform: translate3d(300%, 0, -220px); */
     display: none;
   }
 </style>
 
-<section id="dental-equipment" class="flex items-center mx-auto py-16 md:py-32">
+<section id="dental-equipment" class="flex items-center mx-auto py-16 md:py-32 overflow-x-hidden">
   <div class="w-10/12 xl:w-8/12 h-full flex flex-wrap items-center justify-center mx-auto">
     <div class="w-full text-center my-5 mb-10">
       <Title title={title} subtitle={subtitle} />
     </div>
-    <div class="w-full overflow-x-hidden justify-center items-center">
+    <div class="w-full justify-center items-center">
       <div
         class="w-full h-full max-w-[550px] max-h-[500px] flex flex-col justify-center items-center text-default font-semibold text-[16px] sm:text-[20px] md:text-2xl mx-auto"
         style="transform-style: preserve-3d;"
@@ -220,17 +220,17 @@ const list = [
             list.map((item, index) => (
               // <div class="flex w-full">
               <label
-                class="absolute w-[500px] max-h-[400px] left-0 right-0 m-auto cursor-pointer transition-transform ease-linear duration-500"
+                class="absolute w-[500px] left-0 right-0 m-auto cursor-pointer transition-transform ease-linear duration-500"
                 for={'s' + index}
                 id={'slide' + index}
               >
                 <div class="card relative flex h-full border-5">
-                  <div class="h-auto w-3/5 xl:w-2/5 relative">
+                  <div class="h-auto w-full xl:w-2/5 relative">
                     <img src={item.image} class="w-full " alt={index + ''} />
                     <p class="absolute top-5 px-4 py-2 bg-green-bg active:bg-default text-white name">{item.name}</p>
                   </div>
 
-                  <div class="card-desc w-2/5 h-auto xl:w-3/5 bg-default-bg p-4">
+                  <div class="card-desc w-full h-auto xl:w-3/5 bg-default-bg p-4">
                     {item.content.map((content) => (
                       <div class="mb-4">
                         <div class="border-b border-default-0 text-default-2 text-[18px] text-left font-semibold tracking-[.1em] mb-1">
