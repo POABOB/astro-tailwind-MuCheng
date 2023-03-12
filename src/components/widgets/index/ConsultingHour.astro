@@ -1,4 +1,7 @@
 ---
+import Title from '~/components/widgets/common/Title.astro';
+import BgWords from '~/components/widgets/common/BgWords.astro';
+
 const title = '門診時間';
 const subtitle = 'Consulting Hour';
 ---
@@ -6,11 +9,7 @@ const subtitle = 'Consulting Hour';
 <section
   class="about relative flex items-center mx-auto min-h-[300px] sm:min-h-[550px] md:min-h-[650px] w-full bg-default-bg-0"
 >
-  <div class="absolute left-0 -bottom-2 sm:-bottom-4 md:-bottom-5 lg:-bottom-6 pointer-events-none w-full text-left">
-    <span class="text-white font-extrabold tracking-[.12em] text-[22px] sm:text-[42px] md:text-[52px] lg:text-[68px]"
-      >Mu Cheng Dental Clinic</span
-    >
-  </div>
+  <BgWords />
   <img
     class="absolute right-0 bottom-5 pointer-events-none w-[220px] hidden sm:block"
     src="/assets/images/index/leaf.png"
@@ -18,10 +17,7 @@ const subtitle = 'Consulting Hour';
   <div class="w-10/12 h-full flex flex-wrap items-center justify-center mx-auto">
     <div class="w-full h-auto flex flex-col xl:flex-row">
       <div class="w-full xl:w-3/12 text-left mt-[30px]">
-        <p class="text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[34px] mb-2">
-          {title}
-        </p>
-        <p class="text-default font-bold tracking-[.2em] text-[14px] md:text-[20px] xl:text-[22px]">{subtitle}</p>
+        <Title title={title} subtitle={subtitle} />
       </div>
       <div class="w-full h-full xl:w-9/12">
         <div class="w-full xs:h-full h-auto mx-auto">

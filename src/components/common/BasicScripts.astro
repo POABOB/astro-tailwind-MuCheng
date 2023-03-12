@@ -17,6 +17,10 @@ import { SITE } from '~/config.mjs';
     }
   }
 
+  // function changeCard() {
+  //   console.log(cardValue);
+  // }
+
   // 滑動回頁面頂部
   function smoothScroll() {
     var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
@@ -74,6 +78,38 @@ import { SITE } from '~/config.mjs';
       }
       document.documentElement.classList.toggle('dark');
       localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    attachEvent('[data-carousel-prev-custom]', 'click', function () {
+      const dot = document.querySelectorAll('button[data-carousel-slide-to-custom]');
+
+      const sliderValue = parseInt(document.querySelector('input[name="slider"]:checked').value);
+      var sliders = document.getElementsByName('slider');
+      let v;
+      if ((sliderValue - 1) % 5 < 0) v = 4;
+      else v = (sliderValue - 1) % 5;
+      sliders[v].checked = true;
+      console.log(v);
+
+      dot[sliderValue].setAttribute('aria-current', false);
+      dot[v].setAttribute('aria-current', true);
+    });
+
+    attachEvent('[data-carousel-next-custom]', 'click', function () {
+      const dot = document.querySelectorAll('button[data-carousel-slide-to-custom]');
+
+      const sliderValue = parseInt(document.querySelector('input[name="slider"]:checked').value);
+      var sliders = document.getElementsByName('slider');
+
+      let v;
+      if (sliderValue + 1 > 4) v = 0;
+      else v = sliderValue + 1;
+
+      console.log(v);
+      sliders[v].checked = true;
+
+      dot[sliderValue].setAttribute('aria-current', false);
+      dot[v].setAttribute('aria-current', true);
     });
 
     attachEvent('[data-aw-social-share]', 'click', function (_, elem) {

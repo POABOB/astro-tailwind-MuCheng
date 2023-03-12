@@ -1,26 +1,314 @@
 ---
-const title = '關於木成';
-const subtitle = 'About Mu Cheng';
-const list = ['看診流程數位化', '牙科設備國際化', '量身打造客製化', '療程效果可視化', '費用親民透明化'];
+import Title from '~/components/widgets/common/Title.astro';
+const title = '設備介紹';
+const subtitle = 'Dental Equipment';
+const list = [
+  {
+    name: '診療椅1',
+    image: '/assets/images/index/equipment-1.jpg',
+    content: [
+      {
+        title: '舒適',
+        desc: '出自日本職人工藝，符合人體工學的座椅，讓診療過程更加舒適。',
+      },
+      {
+        title: '安心',
+        desc: '三軸旋轉手術燈，使診療照明更加精準，提升診療效率，提供一個安心且可靠的看診環境。',
+      },
+    ],
+    brand: 'Yoshida',
+    country: '日本',
+  },
+  {
+    name: '診療椅2',
+    image: '/assets/images/index/equipment-1.jpg',
+    content: [
+      {
+        title: '舒適',
+        desc: '出自日本職人工藝，符合人體工學的座椅，讓診療過程更加舒適。',
+      },
+      {
+        title: '安心',
+        desc: '三軸旋轉手術燈，使診療照明更加精準，提升診療效率，提供一個安心且可靠的看診環境。',
+      },
+    ],
+    brand: 'Yoshida',
+    country: '日本',
+  },
+  {
+    name: '診療椅3',
+    image: '/assets/images/index/equipment-1.jpg',
+    content: [
+      {
+        title: '舒適',
+        desc: '出自日本職人工藝，符合人體工學的座椅，讓診療過程更加舒適。',
+      },
+      {
+        title: '安心',
+        desc: '三軸旋轉手術燈，使診療照明更加精準，提升診療效率，提供一個安心且可靠的看診環境。',
+      },
+    ],
+    brand: 'Yoshida',
+    country: '日本',
+  },
+  {
+    name: '診療椅4',
+    image: '/assets/images/index/equipment-1.jpg',
+    content: [
+      {
+        title: '舒適',
+        desc: '出自日本職人工藝，符合人體工學的座椅，讓診療過程更加舒適。',
+      },
+      {
+        title: '安心',
+        desc: '三軸旋轉手術燈，使診療照明更加精準，提升診療效率，提供一個安心且可靠的看診環境。',
+      },
+    ],
+    brand: 'Yoshida',
+    country: '日本',
+  },
+  {
+    name: '診療椅5',
+    image: '/assets/images/index/equipment-1.jpg',
+    content: [
+      {
+        title: '舒適',
+        desc: '出自日本職人工藝，符合人體工學的座椅，讓診療過程更加舒適。',
+      },
+      {
+        title: '安心',
+        desc: '三軸旋轉手術燈，使診療照明更加精準，提升診療效率，提供一個安心且可靠的看診環境。',
+      },
+    ],
+    brand: 'Yoshida',
+    country: '日本',
+  },
+];
 ---
 
-<section
-  id="dental-equipment"
-  class="flex items-center mx-auto min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[800px] w-full bg-cover bg-no-repeat bg-center"
-  style="background-image: url('/assets/images/index/bg-about.png');"
->
+<!-- 
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+  integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+  integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/> -->
+<style is:global>
+  [aria-current]:not([aria-current='false']) {
+    background-color: #8a754e;
+  }
+  #s0:checked ~ ._cards #slide3,
+  #s1:checked ~ ._cards #slide4,
+  #s2:checked ~ ._cards #slide0,
+  #s3:checked ~ ._cards #slide1,
+  #s4:checked ~ ._cards #slide2 {
+    transform: translate3d(-300%, 0, -220px);
+    display: none;
+  }
+
+  #s0:checked ~ ._cards #slide4,
+  #s1:checked ~ ._cards #slide0,
+  #s2:checked ~ ._cards #slide1,
+  #s3:checked ~ ._cards #slide2,
+  #s4:checked ~ ._cards #slide3 {
+    transform: translate3d(-70%, 0, -120px);
+  }
+
+  #s0:checked ~ ._cards #slide4 .card-desc,
+  #s1:checked ~ ._cards #slide0 .card-desc,
+  #s2:checked ~ ._cards #slide1 .card-desc,
+  #s3:checked ~ ._cards #slide2 .card-desc,
+  #s4:checked ~ ._cards #slide3 .card-desc {
+    display: none;
+  }
+
+  #s0:checked ~ ._cards #slide0,
+  #s1:checked ~ ._cards #slide1,
+  #s2:checked ~ ._cards #slide2,
+  #s3:checked ~ ._cards #slide3,
+  #s4:checked ~ ._cards #slide4 {
+    transform: translate3d(0, 0, 0);
+  }
+
+  #s0:checked ~ ._cards #slide0 .name,
+  #s1:checked ~ ._cards #slide1 .name,
+  #s2:checked ~ ._cards #slide2 .name,
+  #s3:checked ~ ._cards #slide3 .name,
+  #s4:checked ~ ._cards #slide4 .name {
+    background-color: rgb(138 117 78);
+  }
+
+  #s0:checked ~ ._cards #slide1,
+  #s1:checked ~ ._cards #slide2,
+  #s2:checked ~ ._cards #slide3,
+  #s3:checked ~ ._cards #slide4,
+  #s4:checked ~ ._cards #slide0 {
+    transform: translate3d(130%, 0, -120px);
+  }
+
+  #s0:checked ~ ._cards #slide1 .card-desc,
+  #s1:checked ~ ._cards #slide2 .card-desc,
+  #s2:checked ~ ._cards #slide3 .card-desc,
+  #s3:checked ~ ._cards #slide4 .card-desc,
+  #s4:checked ~ ._cards #slide0 .card-desc {
+    display: none;
+  }
+
+  #s0:checked ~ ._cards #slide2,
+  #s1:checked ~ ._cards #slide3,
+  #s2:checked ~ ._cards #slide4,
+  #s3:checked ~ ._cards #slide0,
+  #s4:checked ~ ._cards #slide1 {
+    transform: translate3d(300%, 0, -220px);
+    display: none;
+  }
+</style>
+
+<section id="dental-equipment" class="flex items-center mx-auto py-16 md:py-32">
   <div class="w-10/12 xl:w-8/12 h-full flex flex-wrap items-center justify-center mx-auto">
-    <div class="w-full lg:w-1/2 text-left my-5">
-      <p class="text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-2">{title}</p>
-      <p class="text-default font-bold tracking-[.2em] text-[14px] md:text-[20px] xl:text-[22px]">{subtitle}</p>
+    <div class="w-full text-center my-5 mb-10">
+      <Title title={title} subtitle={subtitle} />
     </div>
-    <div class="w-full lg:w-1/2">
+    <div class="w-full justify-center items-center">
       <div
-        class="text-default font-semibold text-[16px] sm:text-[20px] md:text-2xl tracking-[.5em] mx-auto"
-        style="writing-mode: vertical-lr"
+        class="w-full h-full max-w-[550px] max-h-[500px] flex flex-col justify-center items-center text-default font-semibold text-[16px] sm:text-[20px] md:text-2xl mx-auto"
+        style="transform-style: preserve-3d;"
       >
-        {list.map((item, index) => <p class:list={['px-3 md:px-6', { 'pl-0': index === 0 }]}>{item}</p>)}
+        <!-- Slider indicators -->
+        <div class="absolute z-30 -bottom-[30px] flex space-x-3 -translate-x-1/2 left-1/2">
+          {
+            list.map((image, index) => (
+              <>
+                <button
+                  type="button"
+                  class="w-3 h-3 rounded-full bg-default-0 hover:bg-default dental-btn"
+                  aria-current={index === 4 ?? false}
+                  data-carousel-slide-to-custom={index}
+                />
+              </>
+            ))
+          }
+        </div>
+        {
+          list.map((image, index) => (
+            <>
+              <input
+                class="hidden card"
+                type="radio"
+                name="slider"
+                id={'s' + index}
+                checked={index === 4 ?? false}
+                value={index}
+              />
+            </>
+          ))
+        }
+        <!-- Carousel wrapper -->
+        <div
+          class="_cards relative h-56 md:h-[20rem] w-[500px]"
+          style="perspective: 1000px; transform-style: preserve-3d;"
+        >
+          {
+            list.map((item, index) => (
+              // <div class="flex w-full">
+              <label
+                class="absolute w-[500px] left-0 right-0 m-auto cursor-pointer transition-transform ease-linear duration-500"
+                for={'s' + index}
+                id={'slide' + index}
+              >
+                <div class="card relative flex h-full border-5">
+                  <div class="w-full h-auto xl:w-2/5 relative">
+                    <img src={item.image} class="w-full " alt={index + ''} />
+                    <p class="absolute top-5 px-4 py-2 bg-green-bg active:bg-default text-white name">{item.name}</p>
+                  </div>
+
+                  <div class="card-desc w-full h-auto xl:w-3/5 bg-default-bg p-4">
+                    {item.content.map((content) => (
+                      <div class="mb-4">
+                        <div class="border-b border-default-0 text-default-2 text-[18px] text-left font-semibold tracking-[.1em] mb-1">
+                          {content.title}
+                        </div>
+                        <p class="text-left text-sm hover:text-default-2 text-default font-medium tracking-[.1em]">
+                          {content.desc}
+                        </p>
+                      </div>
+                    ))}
+                    <div class="w-full absolute bottom-16 text-sm text-default font-medium tracking-[.1em]">
+                      <p class="text-left">
+                        品牌：{item.brand} <span class="ml-4">國家：{item.country}</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </label>
+              // </div>
+            ))
+          }
+        </div>
+
+        <!-- Slider controls -->
+        <button
+          type="button"
+          class="absolute top-0 -left-[50px] z-30 flex items-center justify-center h-full px-4 cursor-pointer group outline-1 focus:outline-none"
+          data-carousel-prev-custom
+        >
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5 text-default-0 sm:w-8 sm:h-8 dark:text-gray-800"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg
+            >
+            <span class="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          class="absolute top-0 -right-[50px] z-30 flex items-center justify-center h-full px-4 cursor-pointer group outline-1 focus:outline-none"
+          data-carousel-next-custom
+        >
+          <span
+            class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+          >
+            <svg
+              aria-hidden="true"
+              class="w-5 h-5 text-default-0 sm:w-8 sm:h-8 dark:text-gray-800"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg
+            >
+            <span class="sr-only">Next</span>
+          </span>
+        </button>
       </div>
     </div>
   </div>
 </section>
+
+<!-- <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+  integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+  integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script> -->

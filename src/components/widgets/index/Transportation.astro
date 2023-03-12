@@ -1,4 +1,5 @@
 ---
+import Title from '~/components/widgets/common/Title.astro';
 const title = '交通方式';
 const subtitle = 'Transportation';
 
@@ -59,8 +60,7 @@ const landmark = [
   <div class="w-10/12 mx-auto">
     <div class="w-full flex flex-wrap items-center">
       <div class="w-1/2 text-left">
-        <p class="text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-2">{title}</p>
-        <p class="text-default font-bold tracking-[.2em] text-[14px] md:text-[20px] xl:text-[22px]">{subtitle}</p>
+        <Title title={title} subtitle={subtitle} />
       </div>
       <div class="w-full">
         <div class="flex flex-col items-center bg-default-bg rounded-[50px] md:rounded-[75px] xl:flex-row md:max-w-8xl">
