@@ -4,7 +4,7 @@ const CONFIG = {
 	// 網站名稱
   name: '木成牙醫診所 Mu Cheng Dental Clinic',
 	// 網域
-  origin: 'https://astrowind.vercel.app',
+  origin: 'https://mu-cheng.netlify.app',
 	// 基本路徑
   basePathname: '/',
 	// 是否判斷最後一行的"/"

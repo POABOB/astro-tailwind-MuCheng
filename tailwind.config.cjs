@@ -4,6 +4,7 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   content: [
 		'./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}', 
+		// flowbite套件
 		'./node_modules/flowbite/**/*.js'
 	],
   theme: {
@@ -17,16 +18,33 @@ module.exports = {
 				"default-3": "#e8e3d9",
 				"default-bg-0": "#f9f8f3",
 				"default-bg":"#e9e3d3",
+				"custom-blue": "#718391",
 				green: "#809252",
 				"green-light": "#73e600",
-				"custom-blue": "#718391",
 				"green-bg": "#8a9371"
-
       },
       fontFamily: {
         sans: [ "'Noto Serif TC'", "'Philosopher'", "'serif'"]
-        // sans: ["'InterVariable'", ...defaultTheme.fontFamily.sans]
       },
+			// 動畫
+			animation: {
+				upFadeIn: "upFadeIn 2.5s cubic-bezier(0, 0.9, 0.3, 1) forwards"
+			},
+			keyframes: {
+				upFadeIn: {
+					"0%": { 
+						opacity: 0, 
+						transform: 'translateY(40rem)',
+					},
+					"100%": { 
+						opacity: 1,
+						transform: 'translateY(0)'
+					}
+				}
+			},
+			variants: {
+				animation: ["motion-safe"]
+			}
     },
   },
   plugins: [

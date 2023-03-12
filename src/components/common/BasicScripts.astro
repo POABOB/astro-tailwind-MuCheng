@@ -17,6 +17,7 @@ import { SITE } from '~/config.mjs';
     }
   }
 
+  // 滑動回頁面頂部
   function smoothScroll() {
     var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
     if (currentScroll > 0) {
@@ -149,5 +150,32 @@ import { SITE } from '~/config.mjs';
     document.getElementById('header')?.classList.remove('h-screen');
     // #header nav是navbar的選單，通常顯示的時候代表在手機畫面被點開
     document.querySelector('#header nav')?.classList.add('hidden');
+
+    // 標記動畫class
+    const targets = document.querySelectorAll('.js-show-on-scroll');
+
+    // 判斷是否被滑動到，有的話就跑動畫
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach((entry) => {
+        // Is the element in the viewport?
+        if (entry.isIntersecting) {
+          // Add the fadeIn class:
+          entry.target.classList.add('motion-safe:animate-upFadeIn');
+        }
+        // else {
+        // // Otherwise remove the upFadeIn class
+        // entry.target.classList.remove('motion-safe:animate-upFadeIn');
+        // }
+      });
+    });
+
+    // 根據目標先隱藏並觀察
+    targets.forEach(function (target) {
+      // Hide the element
+      target.classList.add('opacity-0');
+
+      // Add the element to the watcher
+      observer.observe(target);
+    });
   };
 </script>
