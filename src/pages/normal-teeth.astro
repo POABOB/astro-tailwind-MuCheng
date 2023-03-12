@@ -1,0 +1,30 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+
+import Normal from '~/components/widgets/normal-teeth/Normal.astro';
+import Treatment from '~/components/widgets/normal-teeth/Treatment.astro';
+import Prevent from '~/components/widgets/normal-teeth/Prevent.astro';
+import GoTop from '~/components/widgets/common/GoTop.astro';
+
+// 每頁的meta tag設定
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<!-- 傳遞資料到Props中給Layout去操作 -->
+<Layout {meta}>
+  <section>
+    <div class="w-100 mx-auto max-w-[2000px]">
+      <div class="text-center pb-10 md:pb-16 w-100 mx-auto">
+        <Normal />
+        <Treatment />
+        <Prevent />
+        <GoTop />
+      </div>
+    </div>
+  </section>
+</Layout>
