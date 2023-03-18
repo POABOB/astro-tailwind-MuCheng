@@ -1,0 +1,36 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+
+import Micro from '~/components/widgets/micro-cure/Micro.astro';
+import Explain from '~/components/widgets/micro-cure/Explain.astro';
+import Import from '~/components/widgets/micro-cure/Import.astro';
+import Process from '~/components/widgets/micro-cure/Process.astro';
+import Advantage from '~/components/widgets/micro-cure/Advantage.astro';
+import Need from '~/components/widgets/micro-cure/Need.astro';
+import GoTop from '~/components/widgets/common/GoTop.astro';
+
+// 每頁的meta tag設定
+const meta = {
+  title: SITE.title,
+  description: SITE.description,
+  dontUseTitleTemplate: true,
+};
+---
+
+<!-- 傳遞資料到Props中給Layout去操作 -->
+<Layout {meta}>
+  <section>
+    <div class="w-100 mx-auto max-w-[2000px]">
+      <div class="text-center pb-10 md:pb-16 w-100 mx-auto">
+        <Micro />
+        <Explain />
+        <Import />
+        <Process />
+        <Advantage />
+        <Need />
+        <GoTop />
+      </div>
+    </div>
+  </section>
+</Layout>

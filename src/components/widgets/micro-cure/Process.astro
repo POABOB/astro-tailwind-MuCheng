@@ -1,0 +1,120 @@
+---
+const title = '顯微輔助根管治療';
+const contents1 = [
+  {
+    id: '01.',
+    title: '初次諮詢',
+    content: '醫師會先初步評估您的口腔狀況。',
+  },
+  {
+    id: '02.',
+    title: '事前口腔資訊蒐集及分析',
+    content: '拍攝3D電腦斷層掃描等放射線影像，進行更全面的分析，評估是否適合進根管輔助治療。',
+  },
+  {
+    id: '03.',
+    title: '制定專屬的診療計畫',
+    content:
+      '在確定進行顯微根管輔助治療後，醫師會與您討論計畫細節，針對您的生活習慣、需求，調整計畫內容，為您制定專屬的療程計畫。',
+  },
+  {
+    id: '04.',
+    title: '顯微輔助根管治療',
+    content:
+      '在開始治療之前，醫師會先局部施打麻醉藥，待麻醉藥發揮效用後，透過顯微鏡的輔助，在放大倍率及有足夠的光源下，根管擴大並開始清潔牙髓腔，針對感染區域進行療程。',
+  },
+];
+const contents2 = [
+  {
+    id: '05.',
+    title: '高品質封填',
+    content:
+      '在移除感染區域後，根管會變成一個空空的管道，醫師會將根管充填起來，避免感染源再度進入，木成選用高品質封填物，將細菌有效杜絕在封填物外。',
+  },
+  {
+    id: '06.',
+    title: '牙冠牙套製作',
+    content: '進行假牙取模、印模、製作，裝置牙冠牙套保護根管治療後的牙齒定期回診依照醫師建議時間，定期回診追蹤。',
+  },
+];
+---
+
+<section
+  id="process"
+  class="bg-default-bg-0 flex flex-wrap mx-auto min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[650px] w-full relative mt-8 overflow-hidden"
+>
+  <div class="w-full my-10 md:my-32 md:mb-16">
+    <p
+      class="relative text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-2 after:content-[''] after:border-b-[1px] after:border-default-0 after:block"
+    >
+      <span class="text-default-bg-0">{title}</span>
+      <span class="absolute top-[.9rem] md:top-[1.3rem] left-0 bg-default-bg-0 pl-4 md:pl-[100px]">{title}</span>
+    </p>
+  </div>
+  <div class="w-10/12 mx-auto mb-16 flex flex-col lg:flex-row">
+    <div class="w-full lg:w-1/2">
+      {
+        contents1.map((content) => (
+          <>
+            <div class="mb-12 lg:mr-6 lg:min-h-[200px]">
+              <div class="mb-6">
+                <p class="text-left">
+                  <span
+                    class="text-default-bg-0 text-3xl md:text-6xl italic tracking-[.1em] font-bold"
+                    style="text-shadow: 0px 0px 2px #654f25, 0px 0px 2px #654f25;"
+                  >
+                    {content.id}
+                  </span>
+                  <span class="text-default font-bold tracking-[.2em] text-[20px] md:text-[20px] xl:text-[26px] my-4">
+                    {content.title}
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p class="text-default tracking-[.1em] text-[12px] md:text-[16px] xl:text-[16px] leading-loose text-left">
+                  {content.content}
+                </p>
+              </div>
+            </div>
+          </>
+        ))
+      }
+    </div>
+    <div class="w-full lg:w-1/2">
+      {
+        contents2.map((content) => (
+          <>
+            <div class="mb-12 lg:ml-6 lg:min-h-[200px]">
+              <div class="mb-6">
+                <p class="text-left">
+                  <span
+                    class="text-default-bg-0 text-3xl md:text-6xl italic tracking-[.1em] font-bold"
+                    style="text-shadow: 0px 0px 2px #654f25, 0px 0px 2px #654f25;"
+                  >
+                    {content.id}
+                  </span>
+                  <span class="text-default font-bold tracking-[.2em] text-[20px] md:text-[20px] xl:text-[26px] my-4">
+                    {content.title}
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p class="text-default tracking-[.1em] text-[12px] md:text-[16px] xl:text-[16px] leading-loose text-left">
+                  {content.content}
+                </p>
+              </div>
+            </div>
+          </>
+        ))
+      }
+    </div>
+  </div>
+  <div
+    class="absolute hidden right-0 xl:left-0 -bottom-4 sm:-bottom-4 md:-bottom-3 md:block lg:-bottom-6 pointer-events-none w-full text-right"
+  >
+    <span
+      class="text-white font-extrabold tracking-[.12em] text-[0px] sm:text-[52px] md:text-[60px] lg:text-[75px] whitespace-nowrap"
+      >Microscopic root canal treatment</span
+    >
+  </div>
+</section>
