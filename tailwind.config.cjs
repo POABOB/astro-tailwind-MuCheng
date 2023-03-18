@@ -21,7 +21,8 @@ module.exports = {
 				"custom-blue": "#718391",
 				green: "#809252",
 				"green-light": "#73e600",
-				"green-bg": "#8a9371"
+				"green-bg": "#8a9371",
+				bl: "#718391",
       },
       fontFamily: {
         sans: [ "'Noto Serif TC'", "'Philosopher'", "'serif'"]

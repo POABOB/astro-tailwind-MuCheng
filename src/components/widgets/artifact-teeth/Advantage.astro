@@ -1,0 +1,70 @@
+---
+const title = '人工植牙優點';
+const contents = [
+  {
+    id: '01.',
+    title: '穩定性高',
+    content: '植牙的植體不容易晃動，可以承受的咬合度較高，能够正常吃東西，穩定目耐用，有效提升。',
+  },
+  {
+    id: '02.',
+    title: '人工植牙使用時間長',
+    content:
+      '在正常的使用狀优下，雖然不能保障終身使用，但如果能够配合醫師指示，持良好的使用習慣及做好口腔清潔，人工植牙要像真牙長期維持並非難事。',
+  },
+  {
+    id: '03.',
+    title: '不須破壞其他健康的牙齒',
+    content: '人工植牙可以針對顆牙齒進行療程，不需要拔除鄰近的健康牙齒。',
+  },
+  {
+    id: '04.',
+    title: '美觀如同真牙',
+    content: '人工植牙真牙相，外觀似真牙自然找回自信笑容。',
+  },
+];
+---
+
+<section
+  id="process"
+  class="flex flex-wrap mx-auto min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[650px] w-full relative mt-8 overflow-hidden"
+>
+  <div class="w-full my-10 md:my-16">
+    <p
+      class="relative text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-2 after:content-[''] after:border-b-[1px] after:border-default-0 after:block"
+    >
+      <span class="text-white">{title}</span>
+      <span class="absolute top-[.9rem] md:top-[1.3rem] left-0 bg-white pl-4 md:pl-[100px]">{title}</span>
+    </p>
+  </div>
+  <div class="w-10/12 mx-auto mb-16 flex flex-col lg:flex-row">
+    <div class="w-full">
+      {
+        contents.map((content) => (
+          <>
+            <div class="mb-12 ">
+              <div class="mb-6">
+                <p class="text-left">
+                  <span
+                    class="text-white text-3xl md:text-6xl italic tracking-[.1em] font-bold"
+                    style="text-shadow: 0px 0px 2px #654f25, 0px 0px 2px #654f25;"
+                  >
+                    {content.id}
+                  </span>
+                  <span class="text-default font-bold tracking-[.2em] text-[20px] md:text-[20px] xl:text-[26px] my-4">
+                    {content.title}
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p class="text-default tracking-[.1em] text-[12px] md:text-[16px] xl:text-[16px] leading-loose text-left">
+                  {content.content}
+                </p>
+              </div>
+            </div>
+          </>
+        ))
+      }
+    </div>
+  </div>
+</section>

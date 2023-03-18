@@ -1,0 +1,121 @@
+---
+const title = '人工植牙流程';
+const contents1 = [
+  {
+    id: '01.',
+    title: '初診諮詢',
+    content: '診所會先為您拍攝全口X光片，讓醫師能夠更加全面了解您的顎及口腔狀况，評估您是否適合進行人工植牙。',
+  },
+  {
+    id: '02.',
+    title: '術前資料随集及分析',
+    content:
+      '雙方允分溝通，確定要進行植牙後，醫師會為您拍攝3D電腦斷層掃推製訂植牙猴程，確認上下顎骨構造型態，根據骨質條件、咬合功能以皮爸，制定專屬的植牙療程計畫以手術導。',
+  },
+  {
+    id: '03.',
+    title: '植牙術前骨肉重建',
+    content:
+      '視每個人口腔狀況，植牙手術前，如醫師評估植牙區的骨密度、高度及厚度不足，需要在植牙前進行補骨或上顎增高術等重建手術，使得後續植牙得以在良好的基礎下施工，讓植牙更加穩因,陪伴您更久。',
+  },
+];
+
+const contents2 = [
+  {
+    id: '04.',
+    title: '人工牙根(植體)植入',
+    content:
+      '開始進行植牙手術前，醫師會確保麻醉發揮效用後才開始進行手術，避免手術過程中產生不適，讓民眾可以安心進行手術。',
+  },
+  {
+    id: '05.',
+    title: '正式假牙的取模與裝載',
+    content: '確認骨整合成功後，醫師會為您取模開始製作假牙，假牙製作完畢後就可以安裝，植牙手術圓滿成功。',
+  },
+  {
+    id: '06.',
+    title: '定期回診',
+    content: '完成人工植牙後，並非一勞永逸，為使植牙可以陪伴您更久的時間，建議每3至6個月回診檢查、洗牙。',
+  },
+];
+---
+
+<section
+  id="process"
+  class="bg-default-bg-0 flex flex-wrap mx-auto min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[650px] w-full relative mt-8 overflow-hidden"
+>
+  <div class="w-full my-10 md:my-32 md:mb-16">
+    <p
+      class="relative text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-2 after:content-[''] after:border-b-[1px] after:border-default-0 after:block"
+    >
+      <span class="text-default-bg-0">{title}</span>
+      <span class="absolute top-[.9rem] md:top-[1.3rem] left-0 bg-default-bg-0 pl-4 md:pl-[100px]">{title}</span>
+    </p>
+  </div>
+  <div class="w-10/12 mx-auto mb-16 flex flex-col lg:flex-row">
+    <div class="w-full lg:w-1/2">
+      {
+        contents1.map((content) => (
+          <>
+            <div class="mb-12 lg:mr-6 lg:min-h-[200px]">
+              <div class="mb-6">
+                <p class="text-left">
+                  <span
+                    class="text-default-bg-0 text-3xl md:text-6xl italic tracking-[.1em] font-bold"
+                    style="text-shadow: 0px 0px 2px #654f25, 0px 0px 2px #654f25;"
+                  >
+                    {content.id}
+                  </span>
+                  <span class="text-default font-bold tracking-[.2em] text-[20px] md:text-[20px] xl:text-[26px] my-4">
+                    {content.title}
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p class="text-default tracking-[.1em] text-[12px] md:text-[16px] xl:text-[16px] leading-loose text-left">
+                  {content.content}
+                </p>
+              </div>
+            </div>
+          </>
+        ))
+      }
+    </div>
+    <div class="w-full lg:w-1/2">
+      {
+        contents2.map((content) => (
+          <>
+            <div class="mb-12 lg:ml-6 lg:min-h-[200px]">
+              <div class="mb-6">
+                <p class="text-left">
+                  <span
+                    class="text-default-bg-0 text-3xl md:text-6xl italic tracking-[.1em] font-bold"
+                    style="text-shadow: 0px 0px 2px #654f25, 0px 0px 2px #654f25;"
+                  >
+                    {content.id}
+                  </span>
+                  <span class="text-default font-bold tracking-[.2em] text-[20px] md:text-[20px] xl:text-[26px] my-4">
+                    {content.title}
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p class="text-default tracking-[.1em] text-[12px] md:text-[16px] xl:text-[16px] leading-loose text-left">
+                  {content.content}
+                </p>
+              </div>
+            </div>
+          </>
+        ))
+      }
+    </div>
+  </div>
+  <div
+    class="absolute hidden right-0 xl:left-0 -bottom-4 sm:-bottom-4 md:-bottom-3 md:block lg:-bottom-6 pointer-events-none w-full text-right"
+  >
+    <span
+      class="text-white font-extrabold tracking-[.12em] text-[0px] sm:text-[52px] md:text-[60px] lg:text-[75px] whitespace-nowrap"
+      >Dental implant</span
+    >
+  </div>
+</section>
