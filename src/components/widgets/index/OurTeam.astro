@@ -25,36 +25,40 @@ const list = [
 ];
 ---
 
-<section id="our-team" class="flex flex-col w-10/12 mx-auto py-16 md:py-32 scroll-mt-[80px] relative js-show-on-scroll">
+<section id="our-team" class="relative">
   <img
-    class="absolute -right-[120px] bottom-5 pointer-events-none w-[220px] hidden sm:block"
+    class="absolute right-0 bottom-5 pointer-events-none w-[220px] hidden sm:block"
     src="/assets/images/index/leaf.png"
   />
-  <div class="w-full text-left mb-20">
-    <Title title={title} subtitle={subtitle} />
-  </div>
-  <div class="w-full h-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
-    {
-      list.map((item) => (
-        <>
-          <div class="flex flex-col md:flex-row">
-            <div class="w-full lg:w-1/2 flex justify-center xl:justify-end">
-              <img class="border-default-0 border-2 w-[220px] h-[330px]" src={item.img} alt="" />
-            </div>
-            <div class="w-full max-w-[200px] md:max-w-[250px] lg:w-1/2  flex justify-end flex-col mx-auto items-start  pl-2 pt-2">
-              <p class=" text-default-2 font-semibold tracking-[.05em] text-[16px] md:text-[20px] mb-2">
-                {item.position}
-              </p>
-              <p class=" text-default-2 font-semibold tracking-[.05em] text-[16px] md:text-[20px] mb-4">{item.name}</p>
+  <div class="flex flex-col w-10/12 mx-auto py-16 md:py-32 scroll-mt-[80px] js-show-on-scroll">
+    <div class="w-full text-left mb-20">
+      <Title title={title} subtitle={subtitle} />
+    </div>
+    <div class="w-full h-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+      {
+        list.map((item) => (
+          <>
+            <div class="flex flex-col md:flex-row">
+              <div class="w-full lg:w-1/2 flex justify-center xl:justify-end">
+                <img class="border-default-0 border-2 w-[220px] h-[330px]" src={item.img} alt="" />
+              </div>
+              <div class="w-full max-w-[200px] md:max-w-[250px] lg:w-1/2  flex justify-end flex-col mx-auto items-start  pl-2 pt-2">
+                <p class=" text-default-2 font-semibold tracking-[.05em] text-[16px] md:text-[20px] mb-2">
+                  {item.position}
+                </p>
+                <p class=" text-default-2 font-semibold tracking-[.05em] text-[16px] md:text-[20px] mb-4">
+                  {item.name}
+                </p>
 
-              <p class=" text-default tracking-[.05em] font-semibold text-[14px] md:text-[16px] mb-2">學經歷</p>
-              {item.experience.map((item2) => (
-                <p class=" text-default tracking-[.05em] text-[12px] md:text-[14px] mb-1">{item2}</p>
-              ))}
+                <p class=" text-default tracking-[.05em] font-semibold text-[14px] md:text-[16px] mb-2">學經歷</p>
+                {item.experience.map((item2) => (
+                  <p class=" text-default tracking-[.05em] text-[12px] md:text-[14px] mb-1">{item2}</p>
+                ))}
+              </div>
             </div>
-          </div>
-        </>
-      ))
-    }
+          </>
+        ))
+      }
+    </div>
   </div>
 </section>
