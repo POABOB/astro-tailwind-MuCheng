@@ -4,7 +4,7 @@ const title = '設備介紹';
 const subtitle = 'Dental Equipment';
 const list = [
   {
-    name: '診療椅1',
+    name: '診療椅',
     image: '/assets/images/index/equipment-2.png',
     content: [
       {
@@ -20,68 +20,68 @@ const list = [
     country: '日本',
   },
   {
-    name: '診療椅2',
+    name: '顯微鏡',
     image: '/assets/images/index/equipment-2.png',
     content: [
       {
-        title: '舒適',
-        desc: '出自日本職人工藝，符合人體工學的座椅，讓診療過程更加舒適。',
+        title: '',
+        desc: '透過顯微鏡的放大倍率,讓牙齒的微小細節都能清晰呈現,醫師能更細緻地處理特殊形態、細微的神經管,大幅提升治療的精準度及成功率,降低需要再治療的狀況發生。',
       },
       {
-        title: '安心',
-        desc: '三軸旋轉手術燈，使診療照明更加精準，提升診療效率，提供一個安心且可靠的看診環境。',
+        title: '找到病根',
+        desc: '牙齒結構細微且複,因有顯微鏡的輔助,補充光源、精準定位,幫助醫師找到病根,剷除感染區域,讓患者得以保留更多齒質,提升牙齒被保留的機會。',
       },
     ],
-    brand: 'Yoshida',
-    country: '日本',
+    brand: 'Zumax',
+    country: '德國',
   },
   {
-    name: '診療椅3',
+    name: '數位口掃機',
     image: '/assets/images/index/equipment-2.png',
     content: [
       {
-        title: '舒適',
-        desc: '出自日本職人工藝，符合人體工學的座椅，讓診療過程更加舒適。',
+        title: '',
+        desc: '免除傳統印模不適與曬心感。',
       },
       {
-        title: '安心',
-        desc: '三軸旋轉手術燈，使診療照明更加精準，提升診療效率，提供一個安心且可靠的看診環境。',
+        title: '隱適美開發',
+        desc: 'Itero是隱適美公司的產品,能夠完美結合隱適美矯正系統,具有以下優勢:\n●可以即時模擬矯正完成的模樣,準確度達60%,讓患者更具體了解矯正的變化。\n●製作矯正模擬動畫,方便醫師追蹤治療進度,掌握矯正療程計畫,提升矯正精準度。',
       },
     ],
-    brand: 'Yoshida',
-    country: '日本',
+    brand: 'Itero',
+    country: '美國',
   },
   {
-    name: '診療椅4',
+    name: '真空消毒鍋',
     image: '/assets/images/index/equipment-2.png',
     content: [
       {
-        title: '舒適',
-        desc: '出自日本職人工藝，符合人體工學的座椅，讓診療過程更加舒適。',
+        title: '多次真空消毒',
+        desc: '診所消毒室配置w&HLina全自動滅菌真空消毒鍋,將器械預抽三次真空並高溫高壓乾燥消毒滅菌,提供更安全的診療環境。',
       },
-      {
-        title: '安心',
-        desc: '三軸旋轉手術燈，使診療照明更加精準，提升診療效率，提供一個安心且可靠的看診環境。',
-      },
+      // {
+      //   title: '安心',
+      //   desc: '三軸旋轉手術燈，使診療照明更加精準，提升診療效率，提供一個安心且可靠的看診環境。',
+      // },
     ],
-    brand: 'Yoshida',
-    country: '日本',
+    brand: 'W&HLina',
+    country: '奥地利',
   },
   {
-    name: '診療椅5',
+    name: '3D數位斷層掃描',
     image: '/assets/images/index/equipment-2.png',
     content: [
       {
-        title: '舒適',
-        desc: '出自日本職人工藝，符合人體工學的座椅，讓診療過程更加舒適。',
+        title: '精準',
+        desc: '電腦斷層掃描合成3D影像,提供術前模擬及分析,讓醫師在進行矯正、根管或植牙等療程時,提供安全度高、更精準地的療程計畫。',
       },
       {
-        title: '安心',
-        desc: '三軸旋轉手術燈，使診療照明更加精準，提升診療效率，提供一個安心且可靠的看診環境。',
+        title: '安全性高',
+        desc: '360度全覽口腔狀況,利於減少口腔組織破壞，縮小傷口範圍、減緩疼痛感、腫脹更少。',
       },
     ],
-    brand: 'Yoshida',
-    country: '日本',
+    brand: 'Planmeca',
+    country: '芬蘭',
   },
 ];
 ---
@@ -199,7 +199,7 @@ const list = [
     </div>
     <div class="w-full justify-center items-center">
       <div
-        class="w-full h-full max-w-[550px] max-h-[500px] flex flex-col justify-center items-center text-default font-semibold text-[16px] sm:text-[20px] md:text-2xl mx-auto"
+        class="w-full h-full max-w-[550px] md:max-h-[500px] flex flex-col justify-center items-center text-default font-semibold text-[16px] sm:text-[20px] md:text-2xl mx-auto"
         style="transform-style: preserve-3d;"
       >
         <!-- Slider indicators -->
@@ -233,30 +233,40 @@ const list = [
         }
         <!-- Carousel wrapper -->
         <div
-          class="_cards relative h-56 min-h-[350px] w-[500px]"
+          class="_cards relative h-auto min-h-[500px] md:min-h-[350px] w-full md:w-[500px]"
           style="perspective: 1000px; transform-style: preserve-3d;"
         >
           {
             list.map((item, index) => (
               // <div class="flex w-full">
               <label
-                class="absolute w-[500px] left-0 right-0 m-auto cursor-pointer transition-transform ease-linear duration-500"
+                class="xl:absolute w-full md:w-[500px] left-0 right-0 m-auto cursor-pointer transition-transform ease-linear duration-500"
                 for={'s' + index}
                 id={'slide' + index}
               >
-                <div class="card relative flex h-full border-5 min-h-[350px]">
+                <div class="card relative flex flex-col md:flex-row h-full border-5 min-h-[350px]">
                   <div class="h-auto w-full xl:w-2/5 relative flex items-center">
-                    <img src={item.image} class="w-full pt-[50px] " alt={index + ''} />
-                    <p class="absolute top-5 px-4 py-2 bg-green-bg active:bg-default text-white name">{item.name}</p>
+                    <img
+                      src={item.image}
+                      class="w-full pt-[50px] max-h-[250px] object-contain md:h-auto "
+                      alt={index + ''}
+                    />
+                    <p class="absolute xl:text-xl top-5 px-4 py-2 bg-green-bg active:bg-default text-white name">
+                      {item.name}
+                    </p>
                   </div>
 
-                  <div class="card-desc w-full h-auto xl:w-3/5 bg-default-bg p-4">
+                  <div class="card-desc w-full h-auto xl:w-3/5 bg-default-bg pb-12 p-4">
                     {item.content.map((content) => (
-                      <div class="mb-4">
-                        <div class="border-b border-default-0 text-default-2 text-[18px] text-left font-semibold tracking-[.1em] mb-1">
-                          {content.title}
-                        </div>
-                        <p class="text-left text-sm hover:text-default-2 text-default font-medium tracking-[.1em]">
+                      <div class="mb-2">
+                        {content.title.length > 0 ? (
+                          <div class="border-b border-default-0 text-default-2 text-[18px] text-left font-semibold tracking-[.1em] mb-1">
+                            {content.title}
+                          </div>
+                        ) : (
+                          ''
+                        )}
+                        <p class="-mt-2 text-left text-sm hover:text-default-2 text-default font-medium tracking-[.1em] whitespace-pre-line">
                           {content.desc}
                         </p>
                       </div>
