@@ -5,7 +5,7 @@ const subtitle = 'Dental Equipment';
 const list = [
   {
     name: '診療椅1',
-    image: '/assets/images/index/equipment-1.jpg',
+    image: '/assets/images/index/equipment-2.png',
     content: [
       {
         title: '舒適',
@@ -21,7 +21,7 @@ const list = [
   },
   {
     name: '診療椅2',
-    image: '/assets/images/index/equipment-1.jpg',
+    image: '/assets/images/index/equipment-2.png',
     content: [
       {
         title: '舒適',
@@ -37,7 +37,7 @@ const list = [
   },
   {
     name: '診療椅3',
-    image: '/assets/images/index/equipment-1.jpg',
+    image: '/assets/images/index/equipment-2.png',
     content: [
       {
         title: '舒適',
@@ -53,7 +53,7 @@ const list = [
   },
   {
     name: '診療椅4',
-    image: '/assets/images/index/equipment-1.jpg',
+    image: '/assets/images/index/equipment-2.png',
     content: [
       {
         title: '舒適',
@@ -69,7 +69,7 @@ const list = [
   },
   {
     name: '診療椅5',
-    image: '/assets/images/index/equipment-1.jpg',
+    image: '/assets/images/index/equipment-2.png',
     content: [
       {
         title: '舒適',
@@ -167,8 +167,28 @@ const list = [
   #s2:checked ~ ._cards #slide4,
   #s3:checked ~ ._cards #slide0,
   #s4:checked ~ ._cards #slide1 {
-    /* transform: translate3d(300%, 0, -220px); */
     display: none;
+  }
+
+  @media (max-width: 1280px) {
+    #s0:checked ~ ._cards #slide1,
+    #s1:checked ~ ._cards #slide2,
+    #s2:checked ~ ._cards #slide3,
+    #s3:checked ~ ._cards #slide4,
+    #s4:checked ~ ._cards #slide0 {
+      transform: translate3d(200%, 0, 0);
+
+      display: none;
+    }
+    #s0:checked ~ ._cards #slide4,
+    #s1:checked ~ ._cards #slide0,
+    #s2:checked ~ ._cards #slide1,
+    #s3:checked ~ ._cards #slide2,
+    #s4:checked ~ ._cards #slide3 {
+      transform: translate3d(-200%, 0, 0);
+
+      display: none;
+    }
   }
 </style>
 
@@ -213,7 +233,7 @@ const list = [
         }
         <!-- Carousel wrapper -->
         <div
-          class="_cards relative h-56 md:h-[20rem] w-[500px]"
+          class="_cards relative h-56 min-h-[350px] w-[500px]"
           style="perspective: 1000px; transform-style: preserve-3d;"
         >
           {
@@ -224,9 +244,9 @@ const list = [
                 for={'s' + index}
                 id={'slide' + index}
               >
-                <div class="card relative flex h-full border-5">
-                  <div class="h-auto w-full xl:w-2/5 relative">
-                    <img src={item.image} class="w-full " alt={index + ''} />
+                <div class="card relative flex h-full border-5 min-h-[350px]">
+                  <div class="h-auto w-full xl:w-2/5 relative flex items-center">
+                    <img src={item.image} class="w-full pt-[50px] " alt={index + ''} />
                     <p class="absolute top-5 px-4 py-2 bg-green-bg active:bg-default text-white name">{item.name}</p>
                   </div>
 

@@ -8,37 +8,39 @@ const serve2 = 'we are your oral experts.';
 ---
 
 <section id="visiting-environment" class="h-auto w-full scroll-mt-[80px]">
-  <div class="w-full flex">
-    <div class="w-full md:w-[70%] max-h-[450px] js-show-on-scroll">
+  <div class="w-full flex flex-col md:flex-row">
+    <div class="w-full md:w-[70%] md:max-h-[450px] js-show-on-scroll">
       <img class="w-full h-full object-cover" src="/assets/images/index/visiting-environment-1.jpg" alt="" />
     </div>
 
-    <div class="w-full lg:w-[30%] flex items-center js-show-on-scroll">
-      <div class="w-full text-left ml-8">
+    <div class="w-full md:w-[30%] flex items-center js-show-on-scroll">
+      <div class="w-full text-center my-[50px] md:text-left ml-8">
         <Title title={title} subtitle={subtitle} />
       </div>
     </div>
   </div>
 
-  <div class="w-full h-auto flex">
-    <div class="w-full lg:w-1/2 flex flex-wrap">
-      <div class="w-full text-left h-full max-h-[300px] my-auto pt-[150px] pb-[300px] js-show-on-scroll">
-        <p class="text-default-0 text-4xl tracking-[.1em] leading-loose font-bold ml-[30px]">{serve1}</p>
-        <p class="text-default-0 text-4xl tracking-[.1em] leading-loose font-bold ml-[70px]">{serve2}</p>
+  <div class="w-full h-auto flex flex-col-reverse md:flex-row">
+    <div class="w-full h-full lg:w-1/2 flex flex-wrap">
+      <div
+        class="w-full text-center md:text-left h-full max-h-[300px] my-auto md:pt-[150px] py-[50px] md:pb-[300px] js-show-on-scroll"
+      >
+        <p class="text-default-0 text-xl md:text-4xl tracking-[.1em] leading-loose font-bold md:ml-[30px]">{serve1}</p>
+        <p class="text-default-0 text-xl md:text-4xl tracking-[.1em] leading-loose font-bold md:ml-[70px]">{serve2}</p>
       </div>
       <img
-        class="w-full h-full object-cover max-h-[450px] js-show-on-scroll"
+        class="w-full h-full object-cover md:max-h-[450px] js-show-on-scroll"
         src="/assets/images/index/visiting-environment-3.jpg"
         alt=""
       />
     </div>
 
     <div class="w-full lg:w-1/2 overflow-hidden flex items-center">
-      <div class="w-full h-full text-left ml-28 max-h-[600px] flex flex-row">
+      <div class="w-full h-full text-left md:ml-28 md:max-h-[600px] flex flex-row">
         <div class="w-10/12 js-show-on-scroll">
           <img class="w-full h-full object-cover" src="/assets/images/index/visiting-environment-2.jpg" alt="" />
         </div>
-        <div class="h-full w-2/12 js-show-on-scroll">
+        <div class="min-h-[300px] md:h-full w-2/12 js-show-on-scroll">
           <div class="ml-5 h-full w-[100px] bg-green-bg -right-[480px]"></div>
         </div>
       </div>
