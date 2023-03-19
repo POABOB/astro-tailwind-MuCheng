@@ -1,0 +1,72 @@
+---
+const title = '客製牙齒美白療程 - 冷光美白';
+const subtitle = '冷光美白是什麼';
+const content =
+  '冷光美白是在牙齒上，塗抹氧化氫凝膠後，透過低溫冷光照射，使沉積的色素分解，利用照光加倍氧化還原反應，進而恢復原本的牙齒顏色，達到牙齒美白的效果。';
+const advantage = '冷光美白優點';
+const contents = [
+  {
+    id: '01.',
+    title: '不會傷害琺瑯質',
+    content: '冷光美白的原理，是分解牙齒表面下的色素沉積，不會傷害到牙齒表面的琺瑯質。',
+  },
+  {
+    id: '02.',
+    title: '快速',
+    content: '冷光美白的原理，是分解牙齒表面下的色素沉積，不會傷害到牙齒表面的琺瑯質。',
+  },
+];
+---
+
+<section
+  id="cold"
+  class="bg-default-bg-0 flex flex-wrap mx-auto min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[650px] w-full relative mt-8 overflow-hidden"
+>
+  <div class="w-full my-10 md:my-32 md:mb-16">
+    <p
+      class="relative text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-2 after:content-[''] after:border-b-[1px] after:border-default-0 after:block"
+    >
+      <span class="text-default-bg-0">{title}</span>
+      <span class="absolute top-[.9rem] md:top-[1.3rem] left-0 bg-default-bg-0 pl-4 md:pl-[100px]">{title}</span>
+    </p>
+  </div>
+  <div class="w-full mx-auto mb-8 lg:mb-16 flex flex-col lg:flex-row">
+    <div class="w-full lg:w-[40%] h-auto flex item-center">
+      <div class="bg-white px-8 lg:py-16 lg:px-20 text-left m-auto py-8">
+        <p class="text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-8">{subtitle}</p>
+        <p class="text-default tracking-[.2em] text-[12px] md:text-[12px] xl:text-[14px] mb-8">{content}</p>
+      </div>
+    </div>
+    <div class="w-full lg:w-[60%] px-8 py-8">
+      <p class="text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-8 text-left ml-4">
+        {advantage}
+      </p>
+      {
+        contents.map((content) => (
+          <>
+            <div class="mb-12 lg:ml-6 lg:min-h-[100px]">
+              <div class="mb-6">
+                <p class="text-left">
+                  <span
+                    class="text-default-bg-0 text-3xl md:text-4xl italic tracking-[.1em] font-bold"
+                    style="text-shadow: 0px 0px 2px #654f25, 0px 0px 2px #654f25;"
+                  >
+                    {content.id}
+                  </span>
+                  <span class="text-default font-bold tracking-[.2em] text-[20px] md:text-[20px] xl:text-[26px] my-4">
+                    {content.title}
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p class="text-default tracking-[.1em] text-[12px] md:text-[16px] xl:text-[16px] leading-loose text-left">
+                  {content.content}
+                </p>
+              </div>
+            </div>
+          </>
+        ))
+      }
+    </div>
+  </div>
+</section>

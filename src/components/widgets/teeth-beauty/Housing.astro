@@ -1,0 +1,87 @@
+---
+const title = '客製牙齒美白療程 - 居家美白';
+const subtitle = '居家美白是什麼';
+const content =
+  '居家美白的原理如同冷光美白，也是利用氧化氫美白凝膠分解色素，達到牙齒美白效果，而居家美白的特性，即是將美白藥劑及個人牙拖帶回家，能夠自行操作。';
+const advantage = '居家美白優點';
+
+const contents = [
+  {
+    id: '01.',
+    title: '客製化牙托',
+    content:
+      '相較於市面上販售的牙托，幾乎只有單一尺寸，木成提供客製化的牙托製作，針對口腔構造，取模製作，讓牙托能夠服貼您的牙齒。',
+  },
+  {
+    id: '02.',
+    title: '量身打造美白計畫',
+    content: '與醫師充分討論後，針對想要達成的效果，量身打造專屬的美白計畫。',
+  },
+  {
+    id: '03.',
+    title: '操作更彈性',
+    content: '可以依照自己方便的時間操作，時間掌控較為彈性，適合忙碌的現代人。',
+  },
+];
+---
+
+<section
+  id="housing"
+  class="bg-default-bg-0 flex flex-wrap mx-auto min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[650px] w-full relative overflow-hidden -mb-[65px]"
+>
+  <div class="w-full my-10 md:my-32 md:mb-16">
+    <p
+      class="relative text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-2 after:content-[''] after:border-b-[1px] after:border-default-0 after:block"
+    >
+      <span class="text-default-bg-0">{title}</span>
+      <span class="absolute top-[.9rem] md:top-[1.3rem] left-0 bg-default-bg-0 pl-4 md:pl-[100px]">{title}</span>
+    </p>
+  </div>
+  <div class="w-full mx-auto mb-8 lg:mb-16 flex flex-col lg:flex-row">
+    <div class="w-full lg:w-[40%] h-auto flex item-center">
+      <div class="bg-white px-8 py-8 lg:py-16 lg:px-20 text-left m-auto">
+        <p class="text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-8">{subtitle}</p>
+        <p class="text-default tracking-[.2em] text-[12px] md:text-[12px] xl:text-[14px] mb-8">{content}</p>
+      </div>
+    </div>
+    <div class="w-full lg:w-[60%] px-8 py-8">
+      <p class="text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-8 text-left ml-4">
+        {advantage}
+      </p>
+      {
+        contents.map((content) => (
+          <>
+            <div class="mb-12 lg:ml-6 lg:min-h-[100px]">
+              <div class="mb-6">
+                <p class="text-left">
+                  <span
+                    class="text-default-bg-0 text-3xl md:text-4xl italic tracking-[.1em] font-bold"
+                    style="text-shadow: 0px 0px 2px #654f25, 0px 0px 2px #654f25;"
+                  >
+                    {content.id}
+                  </span>
+                  <span class="text-default font-bold tracking-[.2em] text-[20px] md:text-[20px] xl:text-[26px] my-4">
+                    {content.title}
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p class="text-default tracking-[.1em] text-[12px] md:text-[16px] xl:text-[16px] leading-loose text-left">
+                  {content.content}
+                </p>
+              </div>
+            </div>
+          </>
+        ))
+      }
+    </div>
+    <div
+      class="absolute hidden right-0 xl:left-0 -bottom-4 sm:-bottom-4 md:-bottom-3 md:block lg:-bottom-5 pointer-events-none w-full text-left"
+    >
+      <span
+        class="text-white font-extrabold tracking-[.12em] text-[24px] sm:text-[42px] md:text-[52px] lg:text-[65px] whitespace-nowrap"
+        >Mu Cheng Dental Clinic</span
+      >
+    </div>
+  </div>
+</section>
