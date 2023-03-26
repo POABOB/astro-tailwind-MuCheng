@@ -1,5 +1,4 @@
 ---
-import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
 import Micro from '~/components/widgets/micro-cure/Micro.astro';
@@ -12,8 +11,9 @@ import GoTop from '~/components/widgets/common/GoTop.astro';
 
 // 每頁的meta tag設定
 const meta = {
-  title: SITE.title,
-  description: SITE.description,
+  title: '俗稱抽神經，透過高規顯微鏡，仔細清除受損神經，保留健康牙齒。',
+  description:
+    '嚴重蛀牙導致牙髓組織感染或牙周病變，須盡早去除壞死或受感染牙髓組織，透過顯微鏡高倍率輔助，讓醫師清楚掌握牙髓腔狀況，減少健康齒質破壞，提高療程成功率。',
   dontUseTitleTemplate: true,
 };
 ---

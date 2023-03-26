@@ -1,5 +1,4 @@
 ---
-import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
 import Carousel from '~/components/widgets/index/Carousel.astro';
@@ -14,8 +13,9 @@ import GoTop from '~/components/widgets/common/GoTop.astro';
 
 // 每頁的meta tag設定
 const meta = {
-  title: SITE.title,
-  description: SITE.description,
+  title: '木成牙醫視病如親，客製化的齒科治療，陪你找到專屬牙齒美學。',
+  description:
+    '台中北屯木成牙醫提供各種牙齒矯正、牙齒美白及一般牙科治療，透過良好的雙向溝通，搭配高科技儀器，使患者達到理想治療效果，北屯牙齒矯正就找木成牙醫。',
   dontUseTitleTemplate: true,
 };
 ---

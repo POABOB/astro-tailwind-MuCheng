@@ -1,5 +1,4 @@
 ---
-import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 
 import Normal from '~/components/widgets/normal-teeth/Normal.astro';
@@ -9,8 +8,9 @@ import GoTop from '~/components/widgets/common/GoTop.astro';
 
 // 每頁的meta tag設定
 const meta = {
-  title: SITE.title,
-  description: SITE.description,
+  title: '木成以人為本的服務宗旨，提供專業口腔照護和預防保健諮詢。',
+  description:
+    '台中北屯牙醫推薦木成，提供一般蛀牙填補、敏感性牙齒、智齒拔除、定期口腔健康檢查、一般洗牙服務，以患者為治療中心，讓患者獲得完善而有效率的療程計畫。',
   dontUseTitleTemplate: true,
 };
 ---

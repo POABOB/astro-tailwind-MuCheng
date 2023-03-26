@@ -1,4 +1,4 @@
-import defaultImage from './assets/images/Logo.png';
+import defaultImage from '../public/assets/images/logo.png';
 
 const CONFIG = {
 	// 網站名稱
