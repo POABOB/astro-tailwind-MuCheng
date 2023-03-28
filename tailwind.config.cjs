@@ -36,10 +36,18 @@ module.exports = {
 					"0%": { 
 						opacity: 0, 
 						transform: 'translateY(40rem)',
+						'-ms-transform': 'translateY(40rem)',
+						'-webkit-transform':'translateY(40rem)',
+						'-moz-transform': 'translateY(40rem)',
+						'-o-transform':'translateY(40rem)',
 					},
 					"100%": { 
 						opacity: 1,
-						transform: 'translateY(0)'
+						transform: 'translateY(0)',
+						'-ms-transform': 'translateY(0)',
+						'-webkit-transform':'translateY(0)',
+						'-moz-transform': 'translateY(0)',
+						'-o-transform':'translateY(0)',
 					}
 				}
 			},
