@@ -43,6 +43,9 @@ module.exports = {
 					}
 				}
 			},
+			screens: {
+				'm-xl': {'max': '1535px'},
+			},
 			variants: {
 				animation: ["motion-safe"]
 			}
