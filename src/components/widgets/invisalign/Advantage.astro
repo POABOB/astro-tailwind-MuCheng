@@ -1,0 +1,76 @@
+---
+const title = '隱適美矯正優點';
+const contents = [
+  {
+    id: '01.',
+    title: '保持美觀',
+    content:
+      '隱適美矯正最大的特點就在於美觀性，相較於一般常見的金屬、陶瓷矯正器，配戴隐形牙套時，僅能愿約看見一層薄膜，其實很難發現隱形牙套的跳跡，在矯正牙齒的同時，還能保持整體相貌美觀。',
+  },
+  {
+    id: '02.',
+    title: '預知療程效果',
+    content: '隱適美矯正會根據矯正計畫，模擬矯正後的模樣，讓您可以更加掌握矯正過程及預測矯正效果。',
+  },
+  {
+    id: '03.',
+    title: '自由度高',
+    content: '可視重要場合取下，且需回診的次數較少，配戴過程自由度較高。',
+  },
+  {
+    id: '04.',
+    title: '降低不適感',
+    content: '材質體積輕薄、彈性佳，較不容易刮傷口腔黏膜或周圍組織。',
+  },
+  {
+    id: '05.',
+    title: '清潔方便',
+    content:
+      '把矯正套取下避免增口腔清潔死角，且能夠清潔乾滑後，再戴回矯正牙套，降低蛀牙發生的機率、減少牙齒變色的脫鈣狀況。',
+  },
+];
+---
+
+<section
+  id="process"
+  class="flex flex-wrap mx-auto min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[650px] w-full relative mt-8 overflow-hidden"
+>
+  <div class="w-full my-10 md:my-16">
+    <p
+      class="relative text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-2 after:content-[''] after:border-b-[1px] after:border-default-0 after:block"
+    >
+      <span class="text-white">{title}</span>
+      <span class="absolute top-[.9rem] md:top-[1.3rem] left-0 bg-white pl-4 md:pl-[100px]">{title}</span>
+    </p>
+  </div>
+  <div class="w-10/12 mx-auto mb-16 flex flex-col lg:flex-row">
+    <div class="w-full">
+      {
+        contents.map((content) => (
+          <>
+            <div class="mb-12 ">
+              <div class="mb-6">
+                <p class="text-left">
+                  <span
+                    class="text-white text-3xl md:text-6xl italic tracking-[.1em] font-bold"
+                    style="text-shadow: 0px 0px 2px #654f25, 0px 0px 2px #654f25;"
+                  >
+                    {content.id}
+                  </span>
+                  <span class="text-default font-bold tracking-[.2em] text-[20px] md:text-[20px] xl:text-[26px] my-4">
+                    {content.title}
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p class="text-default tracking-[.1em] text-[12px] md:text-[16px] xl:text-[16px] leading-loose text-left">
+                  {content.content}
+                </p>
+              </div>
+            </div>
+          </>
+        ))
+      }
+    </div>
+  </div>
+</section>

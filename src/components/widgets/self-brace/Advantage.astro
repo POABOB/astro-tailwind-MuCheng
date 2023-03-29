@@ -1,0 +1,76 @@
+---
+const title = '自鎖式矯正優點';
+const contents = [
+  {
+    id: '01.',
+    title: '降低口腔不適感',
+    content: '因白鎖矯正器的特性，利用城来固定正線不需外再用皮或線固定 诚少腔物感，也能夠絲勾破腔織，造成疼痛不逾。',
+  },
+  {
+    id: '02.',
+    title: '外型較為低調美觀',
+    content:
+      '矯正器校小H少了橡皮筋皮鐵絲提升弊美舰度，也不会生橡皮染色的城尬情形，白鎖式矯正器也的選挥使川透明的御瓷材質·美御度更体。',
+  },
+  {
+    id: '03.',
+    title: '減少口腔清潔死角，提升清潔便利性',
+    content:
+      '白鎖矯正器因為配的小零件较少，少口腔洁潔死，更便於口腔的清潔，避免食物留造成細南滋生，引發牙周病、牙等問題。',
+  },
+  {
+    id: '04.',
+    title: '加速矯正速度',
+    content: '滑蓋的設计小擦力力，矯正的力能够更有效的直接傳划牙齒不需要再外過大的力，能够更有效率的完成正站。',
+  },
+  {
+    id: '05.',
+    title: '看診速度較短',
+    content: '回診時醫師不需要再拆除皮圈或鐵線,可以直接正器進行调整,大虾減少看診時間,時間安排更加由。',
+  },
+];
+---
+
+<section
+  id="process"
+  class="flex flex-wrap mx-auto min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[650px] w-full relative mt-8 overflow-hidden"
+>
+  <div class="w-full my-10 md:my-16">
+    <p
+      class="relative text-default font-bold tracking-[.2em] text-[20px] md:text-[28px] xl:text-[30px] mb-2 after:content-[''] after:border-b-[1px] after:border-default-0 after:block"
+    >
+      <span class="text-white">{title}</span>
+      <span class="absolute top-[.9rem] md:top-[1.3rem] left-0 bg-white pl-4 md:pl-[100px]">{title}</span>
+    </p>
+  </div>
+  <div class="w-10/12 mx-auto mb-16 flex flex-col lg:flex-row">
+    <div class="w-full">
+      {
+        contents.map((content) => (
+          <>
+            <div class="mb-12 ">
+              <div class="mb-6">
+                <p class="text-left">
+                  <span
+                    class="text-white text-3xl md:text-6xl italic tracking-[.1em] font-bold"
+                    style="text-shadow: 0px 0px 2px #654f25, 0px 0px 2px #654f25;"
+                  >
+                    {content.id}
+                  </span>
+                  <span class="text-default font-bold tracking-[.2em] text-[20px] md:text-[20px] xl:text-[26px] my-4">
+                    {content.title}
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p class="text-default tracking-[.1em] text-[12px] md:text-[16px] xl:text-[16px] leading-loose text-left">
+                  {content.content}
+                </p>
+              </div>
+            </div>
+          </>
+        ))
+      }
+    </div>
+  </div>
+</section>

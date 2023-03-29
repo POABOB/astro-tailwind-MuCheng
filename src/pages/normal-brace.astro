@@ -1,0 +1,34 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Normal from '~/components/widgets/normal-brace/Normal.astro';
+import Explain from '~/components/widgets/normal-brace/Explain.astro';
+import Process from '~/components/widgets/normal-brace/Process.astro';
+import Advantage from '~/components/widgets/normal-brace/Advantage.astro';
+// import Need from '~/components/widgets/normal-brace/Need.astro';
+import GoTop from '~/components/widgets/common/GoTop.astro';
+
+// 每頁的meta tag設定
+const meta = {
+  title: '人工植牙帶你找回如真牙的咬合功能和美觀，常保自信笑容。',
+  description:
+    '木成醫師的專業技術搭配高規格顯微鏡，讓每一個植牙療程盡可能長久，取代缺失的牙齒，植牙前透過補骨或上顎增高術為你打好地基，不用拔除鄰近健康牙齒，歡迎詢問評估。',
+  dontUseTitleTemplate: true,
+};
+---
+
+<!-- 傳遞資料到Props中給Layout去操作 -->
+<Layout {meta}>
+  <section>
+    <div class="w-100 mx-auto max-w-[2000px]">
+      <div class="text-center w-100 mx-auto">
+        <Normal />
+        <Explain />
+        <Process />
+        <Advantage />
+        <!-- <Need /> -->
+        <GoTop />
+      </div>
+    </div>
+  </section>
+</Layout>
